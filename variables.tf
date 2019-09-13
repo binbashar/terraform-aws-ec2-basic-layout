@@ -24,6 +24,11 @@ variable "instance_type" {
     description = "EC2 Instance Type"
     default     = "t3.micro"
 }
+variable "instance_profile" {
+    type        = string
+    description = "EC2 IAM Instance Profile"
+    default     = ""
+}
 variable "vpc_id" {
     type        = string
     description = "VPC ID"
