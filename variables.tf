@@ -29,6 +29,11 @@ variable "instance_profile" {
     description = "EC2 IAM Instance Profile"
     default     = ""
 }
+variable "ebs_optimized" {
+    type        = string
+    description = "Enable EBS Optimized"
+    default     = "false"
+}
 variable "vpc_id" {
     type        = string
     description = "VPC ID"
