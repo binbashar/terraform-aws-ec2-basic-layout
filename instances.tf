@@ -5,6 +5,7 @@ resource "aws_instance" "main" {
     subnet_id               = var.subnet_id
     key_name                = var.key_pair_name
     iam_instance_profile    = var.instance_profile
+    ebs_optimized           = var.ebs_optimized
     
     root_block_device {
         volume_type = var.root_device_volume_type
