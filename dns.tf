@@ -5,5 +5,5 @@ resource "aws_route53_record" "main" {
     name    = lookup(element(var.dns_records, count.index), "name", null)
     type    = lookup(element(var.dns_records, count.index), "type", "A")
     ttl     = lookup(element(var.dns_records, count.index), "ttl", 3600)
-    records = [ aws_instance.main.private_ip ]
+    records = lookup(element(var.dns_records, count.index), "records", [ aws_instance.main.private_ip ])
 }
