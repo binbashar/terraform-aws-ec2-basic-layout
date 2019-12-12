@@ -2,69 +2,145 @@
 # General
 #
 variable "prefix" {
-    type        = string
-    description = "Prefix"
-    default     = "default"
+  type        = string
+  description = "Prefix"
+  default     = "default"
 }
+
 variable "name" {
-    type        = string
-    description = "Name"
-    default     = "default"
+  type        = string
+  description = "Name"
+  default     = "default"
 }
 
 #
 # EC2 Attributes
 #
 variable "ami_id" {
-    type        = string
-    description = "AMI Identifier"
+  type        = string
+  description = "AMI Identifier"
+  default     = ""
 }
+
+variable "aws_ami_os_id" {
+  type        = string
+  description = "AWS AMI Operating System Identificator"
+  default     = "ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-*"
+}
+
+variable "aws_ami_os_owner" {
+  type        = string
+  description = "AWS AMI Operating System Owner, eg: 099720109477 for Canonical "
+  default     = "099720109477"
+}
+
 variable "instance_type" {
-    type        = string
-    description = "EC2 Instance Type"
-    default     = "t3.micro"
+  type        = string
+  description = "EC2 Instance Type"
+  default     = "t3.micro"
 }
+
 variable "instance_profile" {
-    type        = string
-    description = "EC2 IAM Instance Profile"
-    default     = ""
+  type        = string
+  description = "EC2 IAM Instance Profile"
+  default     = ""
 }
+
 variable "ebs_optimized" {
-    type        = string
-    description = "Enable EBS Optimized"
-    default     = "false"
+  type        = string
+  description = "Enable EBS Optimized"
+  default     = "false"
 }
+
+variable "monitoring" {
+  type        = bool
+  description = "If true, the launched EC2 instance will have detailed monitoring enabled"
+  default     = false
+}
+
+variable "user_data" {
+  description = "The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see user_data_base64 instead."
+  type        = string
+  default     = null
+}
+
+variable "user_data_base64" {
+  description = "Can be used instead of user_data to pass base64-encoded binary data directly. Use this instead of user_data whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption."
+  type        = string
+  default     = null
+}
+
 variable "vpc_id" {
-    type        = string
-    description = "VPC ID"
+  type        = string
+  description = "VPC ID"
 }
+
 variable "subnet_id" {
-    type        = string
-    description = "Subnet ID"
+  type        = string
+  description = "Subnet ID"
 }
+
+variable "associate_public_ip_address" {
+  type        = bool
+  description = "Associate a public IP address with the instance"
+  default     = false
+}
+
 variable "key_pair_name" {
-    type        = string
-    description = "Key Pair Name"
+  type        = string
+  description = "Key Pair Name"
 }
+
 variable "tags" {
-    type = map
-    description = "Tags"
-    default     = {}
+  type        = map
+  description = "Tags"
+  default     = {}
 }
-variable "root_device_volume_type" {
+
+variable "root_device_backup_tag" {
     type        = string
-    description = "EC2 Root Block Device Volume Type"
-    default     = "gp2"
+    description = "EC2 Root Block Device backup tag"
+    default     = "True"
 }
-variable "root_device_volume_size" {
-    type        = number
-    description = "EC2 Root Block Device Volume Size"
-    default     = 8
+
+#root_block_device = [
+#    {
+#        volume_type = "gp2"
+#        volume_size = 10
+#        encrypted   = true
+#    },
+#
+variable "root_block_device" {
+  type        = list(map(string))
+  description = "Customize details about the root block device of the instance. See Block Devices below for details"
+  default     = []
 }
-variable "root_device_encrypted" {
-    type        = bool
-    description = "EC2 Root Block Device Encrypted"
-    default     = true
+
+#ebs_block_device = [
+#    {
+#        device_name = "/dev/sdf"
+#        volume_type = "gp2"
+#        volume_size = 5
+#        encrypted   = true
+#    },
+#    {
+#        device_name = "/dev/sdg"
+#        volume_type = "gp2"
+#        volume_size = 5
+#        encrypted   = true
+#    }
+#]
+#
+variable "ebs_block_device" {
+  type        = list(map(string))
+  description = "Additional EBS block devices to attach to the instance"
+  default     = []
+}
+
+variable "ephemeral_block_device" {
+  type        = list(map(string))
+  description = "Customize Ephemeral (also known as Instance Store) volumes on the instance"
+  default     = []
 }
 
 #
@@ -78,9 +154,9 @@ variable "root_device_encrypted" {
 #   }]
 #
 variable "security_group_rules" {
-    type        = list(any)
-    description = "A list of security group rules"
-    default     = []
+  type        = list(any)
+  description = "A list of security group rules"
+  default     = []
 }
 
 #
@@ -92,8 +168,14 @@ variable "security_group_rules" {
 #       ttl     = 3600
 #   }]
 #
-variable "dns_records" {
-    type        = list(any)
-    description = "A list of DNS records to create with the instance's IP"
-    default     = []
+variable "dns_records_internal_hosted_zone" {
+  type        = list(any)
+  description = "A list of DNS private (internal hosted zone) records to create with the instance's IP"
+  default     = []
+}
+
+variable "dns_records_public_hosted_zone" {
+  type        = list(any)
+  description = "A list of DNS public (public hosted zone) records to create with the instance's IP"
+  default     = []
 }
