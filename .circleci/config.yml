@@ -35,6 +35,7 @@ jobs:
 
       - run:
           name: test2-terraform-linting
+          shell: /bin/bash
           command: |
             if [[ -z "$(make tflint-deep)" ]]; then
               echo "==============================================================================================="
@@ -137,7 +138,6 @@ workflows:
     jobs:
       - test-static-code-and-linting:
           context: binbashar-org-global-context
-          shell: /bin/bash
           filters:
             branches:
              ignore: # only branches matching the below regex filters will run
@@ -150,7 +150,6 @@ workflows:
 #               - master
       - release-patch-with-changelog:
           context: binbashar-org-global-context
-          shell: /bin/bash
           filters:
             branches:
              only: # only branches matching the below regex filters will run
