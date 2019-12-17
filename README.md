@@ -1,23 +1,35 @@
 <div align="center">
-    <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/binbash.png" alt="drawing" width="350"/>
+    <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-
+    basic-layout/master/figures/binbash.png" alt="drawing" width="350"/>
 </div>
 <div align="right">
-  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/binbash-leverage-terraform.png" alt="leverage" width="230"/>
+  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-
+  basic-layout/master/figures/binbash-leverage-terraform.png"
+  alt="leverage" width="230"/>
 </div>
 
 # Terraform Module: AWS EC2 Basic Layout
 
 ## Overview
-This module could be useful if you find yourself creating a layout that includes the following resources:
-* EC2 Instance w/ configurable AMI, family type, key pair, networking, userdata, among others.
-* EC2 Profile with a customizable IAM Role supporting both AWS and customer managed policies.
-* Multiple EBS dynamic blocks (root_block_device, ebs_block_device and ephemeral_block_device) w/ configurable type, size, device name and encryption configs among others. 
+
+This module could be useful if you find yourself creating a layout that includes
+the following resources:
+
+* EC2 Instance w/ configurable AMI, family type, key pair, networking, userdata,
+among others.
+* EC2 Profile with a customizable IAM Role supporting both AWS and customer
+ managed policies.
+* Multiple EBS dynamic blocks (root_block_device, ebs_block_device and
+ ephemeral_block_device) w/ configurable type, size, device name and encryption
+ configs among others.
 * Security group for the instance above.
 * Optionally associate a public IP address with the instance.
 * DNS record with a record that points to the instance private IP / public IP.
 * Tags: both EC2 and EBS.
 
-Personally we have seen the need of creating a similar set of such resources for an OpenVPN instance, for Jenkins, Spinnaker, DroneCI, Prometheus, Grafana, Hashicorp Vault, ElasticSearch, Kibana and so forth.
+Personally we have seen the need of creating a similar set of such resources
+ for an OpenVPN instance, for Jenkins, Spinnaker, DroneCI, Prometheus, Grafana,
+ Hashicorp Vault, ElasticSearch, Kibana and so forth.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
@@ -71,12 +83,15 @@ Personally we have seen the need of creating a similar set of such resources for
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Examples
+
 ### EC2 Basic Layout
+
 #### ec2-default-instance-profile-simple
+
 ```terraform
 module "terraform-aws-basic-layout" {
   source = "../../"
-  
+
   vpc_id                      = data.terraform_remote_state.vpc.outputs.vpc_id
   subnet_id                   = data.terraform_remote_state.vpc.outputs.public_subnets[0]
   key_pair_name               = data.terraform_remote_state.security.outputs.aws_key_pair_name
@@ -84,6 +99,7 @@ module "terraform-aws-basic-layout" {
 ```
 
 #### ec2-default-instance-profile
+
 ```terraform
 module "terraform-aws-basic-layout" {
     source = "../../"
@@ -184,6 +200,7 @@ module "terraform-aws-basic-layout" {
 ```
 
 #### ec2-external-instance-profile
+
 ```terraform
 module "terraform-aws-basic-layout" {
     source = "../../"
@@ -269,20 +286,24 @@ module "terraform-aws-basic-layout" {
 # Release Management
 
 ## Docker based makefile commands
-- https://cloud.docker.com/u/binbash/repository/docker/binbash/git-release
-- https://github.com/binbashar/terraform-aws-ec2-basic-layout/blob/master/Makefile
+
+* <https://cloud.docker.com/u/binbash/repository/docker/binbash/git-release>
+* <https://github.com/binbashar/terraform-aws-ec2-basic-layout/blob/master/Makefile>
 
 Root directory `Makefile` has the automated steps (to be integrated with **CircleCI jobs** []() )
 
 ### CircleCi PR auto-release job
+
 <div align="left">
-  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/circleci.png" alt="leverage-circleci" width="230"/>
+  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic
+  -layout/master/figures/circleci.png" alt="leverage-circleci" width="230"/>
 </div>
 
-- https://circleci.com/gh/binbashar/terraform-aws-ec2-basic-layout
+- <https://circleci.com/gh/binbashar/terraform-aws-ec2-basic-layout>
 - **NOTE:** Will only run after merged PR.
 
 ### Manual execution from workstation
+
 ```
 $ make
 Available Commands:
