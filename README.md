@@ -1,10 +1,10 @@
 <div align="center">
     <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-
-    basic-layout/master/figures/binbash.png" alt="drawing" width="350"/>
+basic-layout/master/figures/binbash.png" alt="drawing" width="350"/>
 </div>
 <div align="right">
   <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-
-  basic-layout/master/figures/binbash-leverage-terraform.png"
+basic-layout/master/figures/binbash-leverage-terraform.png"
   alt="leverage" width="230"/>
 </div>
 
