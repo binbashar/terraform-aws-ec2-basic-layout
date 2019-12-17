@@ -8,7 +8,7 @@ LOCAL_OS_AWS_PROFILE := bb-dev-deploymaster
 LOCAL_OS_AWS_REGION := us-east-1
 
 TF_PWD_DIR := $(shell pwd)
-TF_VER := 0.12.17
+TF_VER := 0.12.18
 TF_PWD_CONT_DIR := "/go/src/project/"
 TF_DOCKER_ENTRYPOINT := /usr/local/go/bin/terraform
 TF_DOCKER_IMAGE := binbash/terraform-resources
@@ -69,9 +69,21 @@ help:
 	@echo 'Available Commands:'
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf " - \033[36m%-18s\033[0m %s\n", $$1, $$2}'
 
+#==============================================================#
+# PRE COMMIT  												                         #
+#==============================================================#
+.PHONY: ensure_pre_commit
+ensure_pre_commit: .git/hooks/pre-commit ## Ensure pre-commit is installed
+.git/hooks/pre-commit: /usr/local/bin/pre-commit
+	pre-commit install
+	pre-commit install-hooks
+
+.PHONY: pre_commit_tests
+pre_commit_tests: ensure_pre_commit ## Run pre-commit tests
+	pre-commit run --all-files
 
 #==============================================================#
-# TERRAFORM 												   #
+# TERRAFORM 												                           #
 #==============================================================#
 version: ## Show terraform version
 	docker run --rm \
@@ -81,19 +93,13 @@ version: ## Show terraform version
 format: ## The terraform fmt is used to rewrite tf conf files to a canonical format and style.
 	${TF_CMD_PREFIX} fmt ${TF_PWD_CONT_DIR}
 
-doc-tf-eleven: ## A utility to generate documentation from Terraform 0.11 modules in various output formats.
-	docker run --rm -v ${TF_PWD_DIR}:/data -t binbash/terraform-docs markdown table /data
-
-doc-tf-twelve: ## A utility to generate documentation from Terraform 0.12 modules in various output formats.
+terraform-docs: ## A utility to generate documentation from Terraform 0.12 modules in various output formats.
 	docker run --rm \
   	-v $$(pwd):/data \
   	cytopia/terraform-docs:0.6.0 \
   	terraform-docs-012 --sort-inputs-by-required --with-aggregate-type-defaults markdown table .
 
-lint-eleven: ## TFLint is a Terraform linter for detecting errors that can not be detected by terraform plan (tf0.11 < 0.9.2).
-	docker run --rm -v ${TF_PWD_DIR}:/data -t wata727/tflint:0.9.2 --deep
-
-lint: ## TFLint is a Terraform linter for detecting errors that can not be detected by terraform plan (tf0.12 > 0.10.x).
+tflint: ## TFLint is a Terraform linter for detecting errors that can not be detected by terraform plan (tf0.12 > 0.10.x).
 	docker run --rm \
 	-v ${LOCAL_OS_AWS_CONF_DIR}:/root/.aws \
 	-v ${TF_PWD_DIR}:/data \
@@ -109,7 +115,7 @@ lint-deep: ## TFLint is a Terraform linter for detecting errors that can not be 
 	--aws-region=${LOCAL_OS_AWS_REGION}
 
 #==============================================================#
-# TERRATEST 												   #
+# TERRATEST 												                           #
 #==============================================================#
 terratest-dep-init: ## dep is a dependency management tool for Go. (https://github.com/golang/dep)
 	${TERRATEST_DEP_CMD_PREFIX} init
@@ -119,17 +125,17 @@ terratest-dep-init: ## dep is a dependency management tool for Go. (https://gith
 	cp -r ./Gopkg* ./tests/ && rm -rf ./Gopkg*
 
 terratest-go-test: ## Run E2E terratests
-	${TERRATEST_GO_CMD_PREFIX} test
+	${TERRATEST_GO_CMD_PREFIX} test -timeout 20m
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} .
 
 #==============================================================#
-# CIRCLECI 													   #
+# CIRCLECI 													                           #
 #==============================================================#
 circleci-validate-config: ## Validate A CircleCI Config (https://circleci.com/docs/2.0/local-cli/)
 	circleci config validate .circleci/config.yml
 
 #==============================================================#
-# GIT RELEASE 												   #
+# GIT RELEASE 												                         #
 #==============================================================#
 release-patch: ## releasing patch (eg: 0.0.1 -> 0.0.2) based on semantic tagging script for Git
 	# pre-req -> https://github.com/pnikosis/semtag
