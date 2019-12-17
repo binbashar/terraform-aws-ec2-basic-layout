@@ -28,7 +28,7 @@ Personally we have seen the need of creating a similar set of such resources for
 | environment | Environment Name | string | `"shared-test"` | no |
 | instance\_type | EC2 Instance Type | string | `"t3.micro"` | no |
 | monitoring | If true, the launched EC2 instance will have detailed monitoring enabled | bool | `"true"` | no |
-| name | Name | string | `"webhooks-test"` | no |
+| name | Name | string | `"ec2-test"` | no |
 | prefix | Prefix | string | `"infra"` | no |
 | profile | AWS Profile | string | `"bb-shared-deploymaster"` | no |
 | project | Project id | string | `"bb"` | no |
