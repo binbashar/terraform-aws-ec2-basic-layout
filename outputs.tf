@@ -30,14 +30,24 @@ output "aws_instance_key_name" {
   value       = aws_instance.main.key_name
 }
 
+
+
+output "aws_instance_volume_tags" {
+  description = "The root EBS volume tags of the instace."
+  value       = aws_instance.main.volume_tags
+}
+
+#
+# Security
+#
 output "aws_instance_iam_profile" {
   description = "The IAM instance profile of the EC2."
   value       = aws_instance.main.iam_instance_profile
 }
 
-output "aws_instance_volume_tags" {
-  description = "The root EBS volume tags of the instace."
-  value       = aws_instance.main.volume_tags
+output "aws_instance_assume_role_name" {
+  description = "The IAM instance profile of the EC2."
+  value       = var.instance_profile == "" ? aws_iam_role.basic_instance_assume_role[0].name : ""
 }
 
 output "security_group" {

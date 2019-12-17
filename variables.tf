@@ -42,7 +42,7 @@ variable "instance_type" {
 
 variable "instance_profile" {
   type        = string
-  description = "EC2 IAM Instance Profile"
+  description = "The IAM Instance Profile to launch the instance with. Specified as the name of the Instance Profile."
   default     = ""
 }
 
@@ -92,15 +92,15 @@ variable "key_pair_name" {
 }
 
 variable "tags" {
-  type        = map
+  type        = map(string)
   description = "Tags"
   default     = {}
 }
 
 variable "root_device_backup_tag" {
-    type        = string
-    description = "EC2 Root Block Device backup tag"
-    default     = "True"
+  type        = string
+  description = "EC2 Root Block Device backup tag"
+  default     = "True"
 }
 
 #root_block_device = [
@@ -140,6 +140,49 @@ variable "ebs_block_device" {
 variable "ephemeral_block_device" {
   type        = list(map(string))
   description = "Customize Ephemeral (also known as Instance Store) volumes on the instance"
+  default     = []
+}
+
+#
+# EC2 Profile
+#
+# policy_arn = [
+#  "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess",
+#   "arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess",
+# ]
+#
+variable "policy_arn" {
+  description = "Attach AWS IAM managed policies to the IAM Role."
+  type        = list(string)
+  default     = []
+}
+
+#policy_acctions_list = [
+#  "ecr:*",
+#  "ssm:*",
+#  "route53:*",
+#  "s3:ListBucket",
+#  "s3:PutObject",
+#  "s3:PutObjectAcl",
+#  "s3:GetObject",
+#  "s3:DeleteObject"
+#]
+variable "policy_acctions_list" {
+  description = "Action list for EC2 profile IAM Role policy."
+  type        = list(string)
+  default     = []
+}
+
+
+#resource_arn_list = [
+#    "arn:aws:iam::111111111111:role/DevOps",
+#    "arn:aws:iam::111111111111:role/DevOps",
+#    "arn:aws:iam::222222222222:role/Auditor",
+#    "arn:aws:iam::222222222222:role/Auditor",
+#]
+variable "cross_account_roles_resource_arn_list" {
+  description = "Resources arn list for cross org roles for EC2 profile IAM Role policy."
+  type        = list(string)
   default     = []
 }
 

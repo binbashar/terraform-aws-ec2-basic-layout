@@ -23,7 +23,7 @@ resource "aws_instance" "main" {
   vpc_security_group_ids      = [aws_security_group.main.id]
   subnet_id                   = var.subnet_id
   key_name                    = var.key_pair_name
-  iam_instance_profile        = var.instance_profile
+  iam_instance_profile        = var.instance_profile == "" ? aws_iam_instance_profile.basic_instance[0].id : var.instance_profile
   ebs_optimized               = var.ebs_optimized
   monitoring                  = var.monitoring
   associate_public_ip_address = var.associate_public_ip_address
@@ -76,3 +76,4 @@ resource "aws_instance" "main" {
     ]
   }
 }
+
