@@ -77,7 +77,7 @@ jobs:
             aws configure set output json
 
             # AWS dev awscli profile
-            aws configure set role_arn arn:aws:iam::$AWS_ACCOUNT_ID_DEV:role/DeployMaster --profile $AWS_PROFILE_NAME
+            aws configure set role_arn arn:aws:iam::$AWS_ACCOUNT_ID_SHARED:role/DeployMaster --profile $AWS_PROFILE_NAME
             aws configure set source_profile default --profile $AWS_PROFILE_NAME
 
 #      - run: cat ~/.aws/credentials
@@ -85,7 +85,7 @@ jobs:
 
       - run:
           name: Test AWS permissions
-          command: aws budgets describe-budgets --account-id $AWS_ACCOUNT_ID_DEV --profile $AWS_PROFILE_NAME
+          command: aws ec2 describe-instances --region us-east-1 --profile $AWS_PROFILE_NAME
 
       - run:
           name: test3-terratests-dep-init
