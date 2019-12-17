@@ -103,13 +103,13 @@ tflint: ## TFLint is a Terraform linter for detecting errors that can not be det
 	docker run --rm \
 	-v ${LOCAL_OS_AWS_CONF_DIR}:/root/.aws \
 	-v ${TF_PWD_DIR}:/data \
-	-t wata727/tflint:0.12.1
+	-t wata727/tflint:0.13.2
 
-lint-deep: ## TFLint is a Terraform linter for detecting errors that can not be detected by terraform plan (tf0.12 > 0.10.x).
+tflint-deep: ## TFLint is a Terraform linter for detecting errors that can not be detected by terraform plan (tf0.12 > 0.10.x).
 	docker run --rm \
 	-v ${LOCAL_OS_AWS_CONF_DIR}:/root/.aws \
 	-v ${TF_PWD_DIR}:/data \
-	-t wata727/tflint:0.12.1 --deep \
+	-t wata727/tflint:0.13.2 --deep \
 	--aws-profile=${LOCAL_OS_AWS_PROFILE} \
 	--aws-creds-file=/root/.aws/credentials \
 	--aws-region=${LOCAL_OS_AWS_REGION}
