@@ -1,8 +1,12 @@
 # Terraform Module Tests: Terratests
 
 ## Overview
-Terratest is a Go library that makes it easier to write automated tests for your infrastructure code.
-It provides a variety of helper functions and patterns for common infrastructure testing tasks, including:
+
+Terratest is a Go library that makes it easier to write automated tests for your
+ infrastructure code.
+It provides a variety of helper functions and patterns for common infrastructure
+ testing tasks, including:
+
 - Testing Terraform code
 - Working with AWS APIs
 - And much more
@@ -18,30 +22,38 @@ Terratest uses the Go testing framework. To use terratest, you need to install:
 - [dep](https://github.com/golang/dep) (requires version >=0.5.1)
 
 ## Files Organization
+
 * Terraform files are located at the root of this directory.
 * Tests can be found under tests/ directory.
 
 ## Testing
+
 ### Key Points
+
 * We use `terratest` for testing this module.
-* Keep in mind that `terratest` is not a binary but a Go library with helpers that make it easier to work with Terraform and other tools.
-* Test files use `_test` suffix. E.g.: `create_file_with_default_values_test.go`
-* Test classes use `Test` prefix. E.g.: `func TestCreateFileWithDefaultValues(t *testing.T) {`
+* Keep in mind that `terratest` is not a binary but a Go library with helpers
+ that make it easier to work with Terraform and other tools.
+* Test files use `_test` suffix.
+ E.g.: `create_file_with_default_values_test.go`
+* Test classes use `Test` prefix.
+ E.g.: `func TestCreateFileWithDefaultValues(t *testing.T) {`
 * Our tests make use of a fixture/ dir that resembles how the module will be used.
 
 ### Set Up
 
 #### Dokerized Makefile
+
 ```
 $ make
 Available Commands:
 ...
  - terratest-dep-init dep is a dependency management tool for Go. (https://github.com/golang/dep)
- - terratest-go-test  lint: TFLint is a Terraform linter for detecting errors that can not be detected by terraform plan.
+ - terratest-go-test  Run E2E terratests
 ...
 ```
 
-1.  `make terratest-dep-init`
+1. `make terratest-dep-init`
+
 ```
 $ make terratest-dep-init
 docker run --rm -v /home/delivery/Binbash/repos/BB-Leverage/terraform/terraform-aws-ec2-basic-layout:"/go/src/project/":rw -v ~/.ssh:/root/.ssh -v ~/.gitconfig:/etc/gitconfig --entrypoint=dep -it binbash/terraform-resources:0.11.14 init
@@ -61,6 +73,7 @@ cp -r ./Gopkg* ./tests/ && rm -rf ./Gopkg*
 ```
 
 2. `terratest-go-test`
+
 ```
 TestInstanceJenkinsVault 2019-07-08T02:42:42Z command.go:158: Destroy complete! Resources: 23 destroyed.
 TestInstanceJenkinsVault 2019-07-08T02:42:42Z command.go:158:
@@ -76,6 +89,7 @@ sudo chown -R delivery:delivery .
 ```
 
 #### Local installed deps execution
+
 * Make sure this module is within the **GOPATH directory**.
     * Default GOPATH is usually set to `$HOME/go` but you can override that permanently or temporarily.
     * For instance, you could place all your modules under `/home/john.doe/project_name/tf-modules/src/`
@@ -85,8 +99,8 @@ sudo chown -R delivery:delivery .
     * This should create a `vendor/` dir under `tests/` dir and also a `pkg/` dir under the GOPATH dir.
 * Now you can run `go test`
 
-
 ### Tests Result: Passing
+
 ```
 TestAwsEc2BasicLayout 2019-11-28T15:01:04Z command.go:158: module.terraform-aws-basic-layout.aws_security_group.main: Destroying... [id=sg-0f6b79c3a9e030a17]
 TestAwsEc2BasicLayout 2019-11-28T15:01:04Z command.go:158: aws_iam_instance_profile.basic_instance: Destroying... [id=basic-instance-profile]
@@ -94,7 +108,7 @@ TestAwsEc2BasicLayout 2019-11-28T15:01:06Z command.go:158: module.terraform-aws-
 TestAwsEc2BasicLayout 2019-11-28T15:01:06Z command.go:158: aws_iam_instance_profile.basic_instance: Destruction complete after 2s
 TestAwsEc2BasicLayout 2019-11-28T15:01:06Z command.go:158: aws_iam_role.basic_instance_assume_role: Destroying... [id=basic-instance-role]
 TestAwsEc2BasicLayout 2019-11-28T15:01:08Z command.go:158: aws_iam_role.basic_instance_assume_role: Destruction complete after 1s
-TestAwsEc2BasicLayout 2019-11-28T15:01:08Z command.go:158: 
+TestAwsEc2BasicLayout 2019-11-28T15:01:08Z command.go:158:
 TestAwsEc2BasicLayout 2019-11-28T15:01:08Z command.go:158: Destroy complete! Resources: 12 destroyed.
 PASS
 ok      project/tests   248.921s
