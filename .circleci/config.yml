@@ -134,18 +134,18 @@ workflows:
   version: 2
   changelog_and_release:
     jobs:
-#      - test-static-code-and-linting:
-#          context: binbashar-org-global-context
-#          filters:
-#            branches:
-#             ignore: # only branches matching the below regex filters will run
-#               - master
-#      - test-e2e-terratests:
-#          context: binbashar-org-global-context
-#          filters:
-#            branches:
-#             ignore: # only branches matching the below regex filters will run
-#               - master
+      - test-static-code-and-linting:
+          context: binbashar-org-global-context
+          filters:
+            branches:
+             ignore: # only branches matching the below regex filters will run
+               - master
+      - test-e2e-terratests:
+          context: binbashar-org-global-context
+          filters:
+            branches:
+             ignore: # only branches matching the below regex filters will run
+               - master
       - release-patch-with-changelog:
           context: binbashar-org-global-context
           filters:
