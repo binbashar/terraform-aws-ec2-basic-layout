@@ -50,13 +50,9 @@ jobs:
             aws configure set source_profile default --profile $AWS_PROFILE_NAME
 
       - run:
-          name: test2-terraform-linting-cmd
-          command: make tflint-deep
-
-      - run:
           name: test2-terraform-linting
           command: |
-            if [[ -z "$(make tflint-deep)" ]]; then
+            if [ "$(make tflint-deep)" = "" ]; then
               echo "==============================================================================================="
               echo " PASSED - Awesome! Your code is following the best practices                                   "
               echo "==============================================================================================="
