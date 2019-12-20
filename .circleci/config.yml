@@ -51,17 +51,7 @@ jobs:
 
       - run:
           name: test2-terraform-linting
-          command: |
-            if [ "$(make tflint-deep)" = "\n" ]; then
-              echo "==============================================================================================="
-              echo " PASSED - Awesome! Your code is following the best practices                                   "
-              echo "==============================================================================================="
-            else
-              echo "==============================================================================================="
-              echo " NOT PASSED - Terraform lint needed                                                            "
-              echo "==============================================================================================="
-              exit 1
-            fi
+          command: make tflint-deep
 
   #
   # Test 3
