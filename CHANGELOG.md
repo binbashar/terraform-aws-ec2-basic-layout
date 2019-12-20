@@ -2,6 +2,12 @@
 ## [Unreleased]
 
 
+<a name="v0.3.2"></a>
+## [v0.3.2] - 2019-12-20
+### Pull Requests
+- Merge pull request [#6](https://github.com/binbashar/terraform-aws-ec2-basic-layout/issues/6) from binbashar/BBL-54-tf-form-ansible-play-sec-users
+
+
 <a name="v0.3.1"></a>
 ## [v0.3.1] - 2019-12-20
 ### Pull Requests
@@ -21,7 +27,8 @@
 <a name="v0.1.0"></a>
 ## v0.1.0 - 2019-09-11
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.2...HEAD
+[v0.3.2]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.1...v0.3.2
 [v0.3.1]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.0...v0.3.1
 [v0.3.0]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.2.1...v0.3.0
 [v0.2.1]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.2.0...v0.2.1
