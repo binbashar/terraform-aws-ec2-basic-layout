@@ -34,6 +34,11 @@ jobs:
             fi
 
       - run:
+          name: test2-terraform-linting-echo
+          shell: /bin/bash
+          command: echo "tflint-deep-output - $(make tflint-deep)"
+
+      - run:
           name: test2-terraform-linting
           shell: /bin/bash
           command: |
