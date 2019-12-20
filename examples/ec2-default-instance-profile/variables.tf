@@ -39,7 +39,7 @@ variable "prefix" {
 variable "name" {
   type        = string
   description = "Name"
-  default     = "webhooks-test"
+  default     = "ec2-test"
 }
 
 #

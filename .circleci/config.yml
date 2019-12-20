@@ -34,17 +34,25 @@ jobs:
             fi
 
       - run:
-          name: test2-terraform-linting
+          name: Configure awscli
           command: |
-            if make tflint | grep 'Awesome! Your code is following the best practices'; then
-              echo "==============================================================================================="
-              echo " PASSED - Awesome! Your code is following the best practices                                   "
-              echo "==============================================================================================="
-            else
-              echo "==============================================================================================="
-              echo " NOT PASSED - Terraform lint needed                                                            "
-              echo "==============================================================================================="
-            fi
+            echo "AWS_ACCESS_KEY_ID - $AWS_ACCESS_KEY_ID"
+            echo "AWS_PROFILE_NAME - $AWS_PROFILE_NAME"
+
+            # AWS defautl awscli profile
+            aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+            aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+            aws configure set region us-east-1
+            aws configure set output json
+
+            # AWS dev awscli profile
+            aws configure set role_arn arn:aws:iam::$AWS_ACCOUNT_ID_SHARED:role/DeployMaster --profile $AWS_PROFILE_NAME
+            aws configure set source_profile default --profile $AWS_PROFILE_NAME
+
+      - run:
+          name: test2-terraform-linting
+          command: make tflint-deep
+
   #
   # Test 3
   #
@@ -77,15 +85,15 @@ jobs:
             aws configure set output json
 
             # AWS dev awscli profile
-            aws configure set role_arn arn:aws:iam::$AWS_ACCOUNT_ID_DEV:role/DeployMaster --profile $AWS_PROFILE_NAME
+            aws configure set role_arn arn:aws:iam::$AWS_ACCOUNT_ID_SHARED:role/DeployMaster --profile $AWS_PROFILE_NAME
             aws configure set source_profile default --profile $AWS_PROFILE_NAME
 
-#      - run: cat ~/.aws/credentials
-#      - run: cat ~/.aws/config
+      # - run: cat ~/.aws/credentials
+      # - run: cat ~/.aws/config
 
       - run:
           name: Test AWS permissions
-          command: aws budgets describe-budgets --account-id $AWS_ACCOUNT_ID_DEV --profile $AWS_PROFILE_NAME
+          command: aws ec2 describe-instances --region us-east-1 --profile $AWS_PROFILE_NAME
 
       - run:
           name: test3-terratests-dep-init
@@ -101,7 +109,7 @@ jobs:
   release-patch-with-changelog:
     machine:
       image: ubuntu-1604:201903-01
-      #docker_layer_caching: true
+      docker_layer_caching: false
 
     steps:
       - checkout
@@ -127,6 +135,7 @@ jobs:
               echo "$(git status)"
               echo "==============================================================================================="
             fi
+
 #
 # Jobs workflow
 #
@@ -134,18 +143,18 @@ workflows:
   version: 2
   changelog_and_release:
     jobs:
-#      - test-static-code-and-linting:
-#          context: binbashar-org-global-context
-#          filters:
-#            branches:
-#             ignore: # only branches matching the below regex filters will run
-#               - master
-#      - test-e2e-terratests:
-#          context: binbashar-org-global-context
-#          filters:
-#            branches:
-#             ignore: # only branches matching the below regex filters will run
-#               - master
+      - test-static-code-and-linting:
+          context: binbashar-org-global-context
+          filters:
+            branches:
+             ignore: # only branches matching the below regex filters will run
+               - master
+      - test-e2e-terratests:
+          context: binbashar-org-global-context
+          filters:
+            branches:
+             ignore: # only branches matching the below regex filters will run
+               - master
       - release-patch-with-changelog:
           context: binbashar-org-global-context
           filters:
