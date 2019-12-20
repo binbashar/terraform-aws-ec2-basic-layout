@@ -37,7 +37,7 @@ jobs:
           name: test2-terraform-linting
           shell: /bin/bash
           command: |
-            if [[ -z "$(make tflint-deep)" ]]; then
+            if [[ "$(make tflint-deep)" == "" ]]; then
               echo "==============================================================================================="
               echo " PASSED - Awesome! Your code is following the best practices                                   "
               echo "==============================================================================================="
@@ -103,7 +103,7 @@ jobs:
   release-patch-with-changelog:
     machine:
       image: ubuntu-1604:201903-01
-      #docker_layer_caching: true
+      docker_layer_caching: false
 
     steps:
       - checkout
