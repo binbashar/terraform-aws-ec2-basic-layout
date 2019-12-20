@@ -34,20 +34,26 @@ jobs:
             fi
 
       - run:
-          name: test2-terraform-linting-echo
-          shell: /bin/bash
-          command: echo "tflint-deep-output - $(make tflint-deep)"
+          name: Configure awscli
+          command: |
+            echo "AWS_ACCESS_KEY_ID - $AWS_ACCESS_KEY_ID"
+            echo "AWS_PROFILE_NAME - $AWS_PROFILE_NAME"
 
-      - run:
-          name: test2-terraform-linting-cmd
-          shell: /bin/bash
-          command: make tflint-deep
+            # AWS defautl awscli profile
+            aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+            aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+            aws configure set region us-east-1
+            aws configure set output json
+
+            # AWS dev awscli profile
+            aws configure set role_arn arn:aws:iam::$AWS_ACCOUNT_ID_SHARED:role/DeployMaster --profile $AWS_PROFILE_NAME
+            aws configure set source_profile default --profile $AWS_PROFILE_NAME
 
       - run:
           name: test2-terraform-linting
           shell: /bin/bash
           command: |
-            if [ "$(make tflint-deep)" = "" ]; then
+            if [[ -z "$(make tflint-deep)" ]]; then
               echo "==============================================================================================="
               echo " PASSED - Awesome! Your code is following the best practices                                   "
               echo "==============================================================================================="
@@ -57,6 +63,7 @@ jobs:
               echo "==============================================================================================="
               exit 1
             fi
+
   #
   # Test 3
   #
@@ -92,8 +99,8 @@ jobs:
             aws configure set role_arn arn:aws:iam::$AWS_ACCOUNT_ID_SHARED:role/DeployMaster --profile $AWS_PROFILE_NAME
             aws configure set source_profile default --profile $AWS_PROFILE_NAME
 
-#      - run: cat ~/.aws/credentials
-#      - run: cat ~/.aws/config
+      # - run: cat ~/.aws/credentials
+      # - run: cat ~/.aws/config
 
       - run:
           name: Test AWS permissions
@@ -139,6 +146,7 @@ jobs:
               echo "$(git status)"
               echo "==============================================================================================="
             fi
+            
 #
 # Jobs workflow
 #
