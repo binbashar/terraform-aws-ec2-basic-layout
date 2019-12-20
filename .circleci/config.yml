@@ -42,7 +42,7 @@ jobs:
           name: test2-terraform-linting
           shell: /bin/bash
           command: |
-            if [[ "$(make tflint-deep)" == "" ]]; then
+            if [[ "$(make tflint-deep)" = "" ]]; then
               echo "==============================================================================================="
               echo " PASSED - Awesome! Your code is following the best practices                                   "
               echo "==============================================================================================="
