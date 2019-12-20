@@ -293,8 +293,7 @@ Root directory `Makefile` has the automated steps (to be integrated with **Circl
 ### CircleCi PR auto-release job
 
 <div align="left">
-  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic
-  -layout/master/figures/circleci.png" alt="leverage-circleci" width="230"/>
+  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/circleci.png" alt="leverage-circleci" width="230"/>
 </div>
 
 - <https://circleci.com/gh/binbashar/terraform-aws-ec2-basic-layout>
