@@ -8,7 +8,7 @@ module "terraform-aws-basic-layout" {
   aws_ami_os_owner            = var.aws_ami_os_owner
   instance_type               = var.instance_type
   vpc_id                      = data.terraform_remote_state.vpc.outputs.vpc_id
-  subnet_id                   = data.terraform_remote_state.vpc.outputs.public_subnets[0]
+  subnet_id                   = tostring(data.terraform_remote_state.vpc.outputs.public_subnets[0][0])
   associate_public_ip_address = var.associate_public_ip_address
   key_pair_name               = data.terraform_remote_state.security.outputs.aws_key_pair_name
   ebs_optimized               = var.ebs_optimized
@@ -57,14 +57,14 @@ module "terraform-aws-basic-layout" {
   ]
 
   dns_records_internal_hosted_zone = [{
-    zone_id = data.terraform_remote_state.vpc.outputs.aws_internal_zone_id[0],
+    zone_id = data.terraform_remote_state.dns.outputs.aws_internal_zone_id[0],
     name    = "ec2-basic-layout.aws.binbash.com.ar",
     type    = "A",
     ttl     = 300
   }]
 
   dns_records_public_hosted_zone = [{
-    zone_id = data.terraform_remote_state.vpc.outputs.aws_public_zone_id[0],
+    zone_id = data.terraform_remote_state.dns.outputs.aws_public_zone_id[0],
     name    = "ec2-basic-layout.binbash.com.ar",
     type    = "A",
     ttl     = 300

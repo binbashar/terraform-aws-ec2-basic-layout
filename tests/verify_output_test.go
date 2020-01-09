@@ -7,9 +7,9 @@ import (
     "github.com/stretchr/testify/assert"
 )
 
-//
-// E2E Terratest Case1: ec2-default-instance-profile
-//
+// //
+// // E2E Terratest Case1: ec2-default-instance-profile
+// //
 func TestAwsEc2BasicLayoutCase1(t *testing.T) {
     expectedValue1  := "us-east-1a"
     expectedValue2  := "t3.micro"
@@ -46,15 +46,15 @@ func TestAwsEc2BasicLayoutCase1(t *testing.T) {
     assert.Equal(t, expectedValue1, actualOutput1)
     assert.Equal(t, expectedValue2, actualOutput2)
     assert.Equal(t, expectedValue3, actualOutput3)
-    assert.Equal(t, expectedValue4, actualOutput4)
-    assert.Equal(t, expectedValue5, actualOutput5)
+    assert.Contains(t, actualOutput4, expectedValue4)
+    assert.Contains(t, actualOutput5, expectedValue5)
     assert.Equal(t, expectedValue6, actualOutput6)
     assert.Equal(t, expectedValue7, actualOutput7)
 }
 
-//
-// E2E Terratest Case2: ec2-default-instance-profile-simple
-//
+// //
+// // E2E Terratest Case2: ec2-default-instance-profile-simple
+// //
 func TestAwsEc2BasicLayoutCase2(t *testing.T) {
     expectedValue1  := "us-east-1a"
     expectedValue2  := "t3.micro"
@@ -91,8 +91,8 @@ func TestAwsEc2BasicLayoutCase2(t *testing.T) {
     assert.Equal(t, expectedValue1, actualOutput1)
     assert.Equal(t, expectedValue2, actualOutput2)
     assert.Equal(t, expectedValue3, actualOutput3)
-    assert.Equal(t, expectedValue4, actualOutput4)
-    assert.Equal(t, expectedValue5, actualOutput5)
+    assert.Contains(t, actualOutput4, expectedValue4)
+    assert.Contains(t, actualOutput5, expectedValue5)
     assert.Equal(t, expectedValue6, actualOutput6)
     assert.Equal(t, expectedValue7, actualOutput7)
 }
@@ -141,4 +141,3 @@ func TestAwsEc2BasicLayoutCase3(t *testing.T) {
     assert.Equal(t, expectedValue6, actualOutput6)
     assert.Equal(t, expectedValue7, actualOutput7)
 }
-

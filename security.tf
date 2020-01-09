@@ -41,17 +41,22 @@ resource "aws_security_group_rule" "egress_allow_all" {
 #
 # AWS EC2 profile w/ IAM Role association
 #
+resource "random_string" "suffix" {
+  length  = 8
+  special = false
+}
+
 resource "aws_iam_instance_profile" "basic_instance" {
   count = var.instance_profile == "" ? 1 : 0
 
-  name = "basic-instance-profile"
+  name = "basic-instance-profile-${random_string.suffix.result}"
   role = aws_iam_role.basic_instance_assume_role[0].name
 }
 
 resource "aws_iam_role" "basic_instance_assume_role" {
   count = var.instance_profile == "" ? 1 : 0
 
-  name               = "basic-instance-role"
+  name               = "basic-instance-role-${random_string.suffix.result}"
   path               = "/"
   assume_role_policy = data.aws_iam_policy_document.this.json
 }

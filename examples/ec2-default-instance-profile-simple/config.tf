@@ -13,7 +13,7 @@ variable "region" {
 
 variable "profile" {
   description = "AWS Profile"
-  default     = "bb-dev-deploymaster"
+  default     = "bb-shared-deploymaster"
 }
 
 #=============================#
@@ -39,6 +39,17 @@ data "terraform_remote_state" "vpc" {
     profile = var.profile
     bucket  = "bb-shared-terraform-state-storage-s3"
     key     = "shared/network/terraform.tfstate"
+  }
+}
+
+data "terraform_remote_state" "dns" {
+  backend = "s3"
+
+  config = {
+    region  = var.region_backend_data
+    profile = var.profile
+    bucket  = "bb-shared-terraform-state-storage-s3"
+    key     = "shared/dns/terraform.tfstate"
   }
 }
 
