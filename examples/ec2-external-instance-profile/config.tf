@@ -13,7 +13,7 @@ variable "region" {
 
 variable "profile" {
   description = "AWS Profile"
-  default     = "bb-shared-deploymaster"
+  default     = "bb-dev-deploymaster"
 }
 
 #=============================#
