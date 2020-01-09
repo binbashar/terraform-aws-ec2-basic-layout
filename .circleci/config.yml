@@ -21,17 +21,7 @@ jobs:
 
       - run:
           name: test1-terraform-format
-          command: |
-            if [[ $(make format| tail -n +2) ]]; then
-              echo "==================================================================================================="
-              echo " NOT PASSED - There are Terraform conf files that needs a canonical format and styleto be formated "
-              echo "==================================================================================================="
-              exit 1
-            else
-              echo "==================================================================================================="
-              echo " PASSED - All Terraform conf files already have canonical format and are correcyly styled          "
-              echo "==================================================================================================="
-            fi
+          command: make format-check
 
       - run:
           name: Configure awscli
@@ -127,7 +117,7 @@ jobs:
               echo "==============================================================================================="
               git config --global user.email "$GIT_USER_EMAIL"
               git config --global user.name "$GIT_USER_NAME"
-              make release-patch-with-changelog-circleci
+              make -f Makefile.release release-patch-with-changelog-circleci
             else
               echo "==============================================================================================="
               echo "Changes in working directory pending to be pushed - please check 'git status' cmd output below "
@@ -141,7 +131,7 @@ jobs:
 #
 workflows:
   version: 2
-  changelog_and_release:
+  test_and_release:
     jobs:
       - test-static-code-and-linting:
           context: binbashar-org-global-context

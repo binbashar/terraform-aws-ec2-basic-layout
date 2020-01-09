@@ -42,6 +42,17 @@ data "terraform_remote_state" "vpc" {
   }
 }
 
+data "terraform_remote_state" "dns" {
+  backend = "s3"
+
+  config = {
+    region  = var.region_backend_data
+    profile = var.profile
+    bucket  = "bb-shared-terraform-state-storage-s3"
+    key     = "shared/dns/terraform.tfstate"
+  }
+}
+
 data "terraform_remote_state" "security" {
   backend = "s3"
 
