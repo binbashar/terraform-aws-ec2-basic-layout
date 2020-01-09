@@ -7,9 +7,9 @@ import (
     "github.com/stretchr/testify/assert"
 )
 
-// //
-// // E2E Terratest Case1: ec2-default-instance-profile
-// //
+//
+// E2E Terratest Case1: ec2-default-instance-profile
+//
 func TestAwsEc2BasicLayoutCase1(t *testing.T) {
     expectedValue1  := "us-east-1a"
     expectedValue2  := "t3.micro"
@@ -52,9 +52,9 @@ func TestAwsEc2BasicLayoutCase1(t *testing.T) {
     assert.Equal(t, expectedValue7, actualOutput7)
 }
 
-// //
-// // E2E Terratest Case2: ec2-default-instance-profile-simple
-// //
+//
+// E2E Terratest Case2: ec2-default-instance-profile-simple
+//
 func TestAwsEc2BasicLayoutCase2(t *testing.T) {
     expectedValue1  := "us-east-1a"
     expectedValue2  := "t3.micro"
