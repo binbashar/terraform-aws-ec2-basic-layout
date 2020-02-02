@@ -13,14 +13,15 @@ variable "region" {
 
 variable "profile" {
   description = "AWS Profile"
-  default     = "bb-dev-deploymaster"
+  default     = "bb-dev-deploymaster" # ci aws-iam-profile
+  #default = "bb-shared-deploymaster" # localhost aws-iam-profile
 }
 
 #=============================#
 # Backend Config (partial)    #
 #=============================#
 terraform {
-  required_version = ">= 0.12.18"
+  required_version = ">= 0.12.20"
 }
 
 #=============================#
@@ -37,7 +38,7 @@ data "terraform_remote_state" "vpc" {
   config = {
     region  = var.region_backend_data
     profile = var.profile
-    bucket  = "bb-shared-terraform-state-storage-s3"
+    bucket  = "bb-shared-terraform-backend"
     key     = "shared/network/terraform.tfstate"
   }
 }
@@ -48,7 +49,7 @@ data "terraform_remote_state" "dns" {
   config = {
     region  = var.region_backend_data
     profile = var.profile
-    bucket  = "bb-shared-terraform-state-storage-s3"
+    bucket  = "bb-shared-terraform-backend"
     key     = "shared/dns/terraform.tfstate"
   }
 }
@@ -59,7 +60,7 @@ data "terraform_remote_state" "security" {
   config = {
     region  = var.region_backend_data
     profile = var.profile
-    bucket  = "bb-shared-terraform-state-storage-s3"
+    bucket  = "bb-shared-terraform-backend"
     key     = "shared/security/terraform.tfstate"
   }
 }

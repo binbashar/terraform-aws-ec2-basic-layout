@@ -8,7 +8,7 @@ module "terraform-aws-basic-layout" {
   aws_ami_os_owner            = var.aws_ami_os_owner
   instance_type               = var.instance_type
   vpc_id                      = data.terraform_remote_state.vpc.outputs.vpc_id
-  subnet_id                   = tostring(data.terraform_remote_state.vpc.outputs.public_subnets[0][0])
+  subnet_id                   = data.terraform_remote_state.vpc.outputs.public_subnets[0]
   associate_public_ip_address = var.associate_public_ip_address
   key_pair_name               = data.terraform_remote_state.security.outputs.aws_key_pair_name
   ebs_optimized               = var.ebs_optimized
