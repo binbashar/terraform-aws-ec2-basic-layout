@@ -4,11 +4,15 @@ LOCAL_OS_USER := $(shell whoami)
 LOCAL_OS_SSH_DIR := ~/.ssh
 LOCAL_OS_GIT_CONF_DIR := ~/.gitconfig
 LOCAL_OS_AWS_CONF_DIR := ~/.aws
-LOCAL_OS_AWS_PROFILE := bb-dev-deploymaster
+
+# localhost aws-iam-profile
+#LOCAL_OS_AWS_PROFILE := bb-shared-deploymaster
+# ci aws-iam-profile
+LOCAL_OS_AWS_PROFILE :="bb-dev-deploymaster"
 LOCAL_OS_AWS_REGION := us-east-1
 
 TF_PWD_DIR := $(shell pwd)
-TF_VER := 0.12.18
+TF_VER := 0.12.20
 TF_PWD_CONT_DIR := "/go/src/project/"
 TF_DOCKER_ENTRYPOINT := /usr/local/go/bin/terraform
 TF_DOCKER_IMAGE := binbash/terraform-resources
@@ -61,10 +65,10 @@ version: ## Show terraform version
 	-t ${TF_DOCKER_IMAGE}:${TF_VER} version
 
 format: ## The terraform fmt is used to rewrite tf conf files to a canonical format and style.
-	${TF_CMD_PREFIX} fmt ${TF_PWD_CONT_DIR}
+	${TF_CMD_PREFIX} fmt -recursive ${TF_PWD_CONT_DIR}
 
 format-check: ## The terraform fmt is used to rewrite tf conf files to a canonical format and style.
-	${TF_CMD_PREFIX} fmt -check ${TF_PWD_CONT_DIR}
+	${TF_CMD_PREFIX} fmt -check -recursive ${TF_PWD_CONT_DIR}
 
 terraform-docs: ## A utility to generate documentation from Terraform 0.12 modules in various output formats.
 	docker run --rm \
