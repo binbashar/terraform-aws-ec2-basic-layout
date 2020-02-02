@@ -10,7 +10,6 @@ variable "prefix" {
 variable "name" {
   type        = string
   description = "Name"
-  default     = "default"
 }
 
 #
@@ -59,14 +58,14 @@ variable "monitoring" {
 }
 
 variable "user_data" {
-  description = "The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see user_data_base64 instead."
   type        = string
+  description = "The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see user_data_base64 instead."
   default     = null
 }
 
 variable "user_data_base64" {
-  description = "Can be used instead of user_data to pass base64-encoded binary data directly. Use this instead of user_data whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption."
   type        = string
+  description = "Can be used instead of user_data to pass base64-encoded binary data directly. Use this instead of user_data whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption."
   default     = null
 }
 
@@ -103,34 +102,12 @@ variable "root_device_backup_tag" {
   default     = "True"
 }
 
-#root_block_device = [
-#    {
-#        volume_type = "gp2"
-#        volume_size = 10
-#        encrypted   = true
-#    },
-#
 variable "root_block_device" {
   type        = list(map(string))
   description = "Customize details about the root block device of the instance. See Block Devices below for details"
   default     = []
 }
 
-#ebs_block_device = [
-#    {
-#        device_name = "/dev/sdf"
-#        volume_type = "gp2"
-#        volume_size = 5
-#        encrypted   = true
-#    },
-#    {
-#        device_name = "/dev/sdg"
-#        volume_type = "gp2"
-#        volume_size = 5
-#        encrypted   = true
-#    }
-#]
-#
 variable "ebs_block_device" {
   type        = list(map(string))
   description = "Additional EBS block devices to attach to the instance"
@@ -143,74 +120,30 @@ variable "ephemeral_block_device" {
   default     = []
 }
 
-#
-# EC2 Profile
-#
-# policy_arn = [
-#  "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess",
-#   "arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess",
-# ]
-#
 variable "policy_arn" {
+  type        = list(string)
   description = "Attach AWS IAM managed policies to the IAM Role."
-  type        = list(string)
   default     = []
 }
 
-#policy_acctions_list = [
-#  "ecr:*",
-#  "ssm:*",
-#  "route53:*",
-#  "s3:ListBucket",
-#  "s3:PutObject",
-#  "s3:PutObjectAcl",
-#  "s3:GetObject",
-#  "s3:DeleteObject"
-#]
 variable "policy_acctions_list" {
+  type        = list(string)
   description = "Action list for EC2 profile IAM Role policy."
-  type        = list(string)
   default     = []
 }
 
-
-#resource_arn_list = [
-#    "arn:aws:iam::111111111111:role/DevOps",
-#    "arn:aws:iam::111111111111:role/DevOps",
-#    "arn:aws:iam::222222222222:role/Auditor",
-#    "arn:aws:iam::222222222222:role/Auditor",
-#]
 variable "cross_account_roles_resource_arn_list" {
-  description = "Resources arn list for cross org roles for EC2 profile IAM Role policy."
   type        = list(string)
+  description = "Resources arn list for cross org roles for EC2 profile IAM Role policy."
   default     = []
 }
 
-#
-# Security Group Rules -- For example:
-#   security_group_rules = [{
-#       from_port   = 22,
-#       to_port     = 22,
-#       protocol    = "tcp",
-#       cidr_blocks = [ "0.0.0.0/0" ],
-#       description = "Allow SSH"
-#   }]
-#
 variable "security_group_rules" {
   type        = list(any)
   description = "A list of security group rules"
   default     = []
 }
 
-#
-# DNS Records -- For example:
-#   dns_records = [{
-#       zone_id = "ABCDEF123",
-#       name    = "some.example.com",
-#       type    = "A",
-#       ttl     = 3600
-#   }]
-#
 variable "dns_records_internal_hosted_zone" {
   type        = list(any)
   description = "A list of DNS private (internal hosted zone) records to create with the instance's IP"
@@ -221,4 +154,16 @@ variable "dns_records_public_hosted_zone" {
   type        = list(any)
   description = "A list of DNS public (public hosted zone) records to create with the instance's IP"
   default     = []
+}
+
+variable "credit_specification_cpu" {
+  type        = string
+  description = "Can be applied/modified to the EC2 at any time. The credit option for CPU usage. Can be 'standard' or 'unlimited'. By default T3 = unlimited & T2 'standard'."
+  default     = "unlimited"
+}
+
+variable "disable_api_termination" {
+  type        = string
+  description = "If true, enables EC2 Instance Termination Protection"
+  default     = "false"
 }

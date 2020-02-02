@@ -30,8 +30,6 @@ output "aws_instance_key_name" {
   value       = aws_instance.main.key_name
 }
 
-
-
 output "aws_instance_volume_tags" {
   description = "The root EBS volume tags of the instace."
   value       = aws_instance.main.volume_tags
