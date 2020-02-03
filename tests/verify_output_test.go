@@ -14,8 +14,8 @@ func TestAwsEc2BasicLayoutCase1(t *testing.T) {
     expectedValue1  := "us-east-1a"
     expectedValue2  := "t3.micro"
     expectedValue3  := "bb-infra-deployer"
-    expectedValue4  := "basic-instance-profile"
-    expectedValue5  := "basic-instance-role"
+    expectedValue4  := "basic-instance-profile-infra-ec2-test"
+    expectedValue5  := "basic-instance-role-infra-ec2-test"
     expectedValue6  := "[\n  \"ec2-basic-layout.aws.binbash.com.ar\",\n]"
     expectedValue7  := "[\n  \"ec2-basic-layout.binbash.com.ar\",\n]"
 
@@ -59,8 +59,8 @@ func TestAwsEc2BasicLayoutCase2(t *testing.T) {
     expectedValue1  := "us-east-1a"
     expectedValue2  := "t3.micro"
     expectedValue3  := "bb-infra-deployer"
-    expectedValue4  := "basic-instance-profile"
-    expectedValue5  := "basic-instance-role"
+    expectedValue4  := "basic-instance-profile-default-ec2-test"
+    expectedValue5  := "basic-instance-role-default-ec2-test"
     expectedValue6  := "[]"
     expectedValue7  := "[]"
 

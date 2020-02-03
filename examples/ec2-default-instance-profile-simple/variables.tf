@@ -30,12 +30,6 @@ variable "shared_account_id" {
 #
 # General
 #
-variable "prefix" {
-  type        = string
-  description = "Prefix"
-  default     = "infra"
-}
-
 variable "name" {
   type        = string
   description = "Name"

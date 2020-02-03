@@ -38,7 +38,9 @@ Personally we have seen the need of creating a similar set of such resources
 | associate\_public\_ip\_address | Associate a public IP address with the instance | bool | `"false"` | no |
 | aws\_ami\_os\_id | AWS AMI Operating System Identificator | string | `"ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-*"` | no |
 | aws\_ami\_os\_owner | AWS AMI Operating System Owner, eg: 099720109477 for Canonical | string | `"099720109477"` | no |
+| credit\_specification\_cpu | Can be applied/modified to the EC2 at any time. The credit option for CPU usage. Can be 'standard' or 'unlimited'. By default T3 = unlimited & T2 'standard'. | string | `"unlimited"` | no |
 | cross\_account\_roles\_resource\_arn\_list | Resources arn list for cross org roles for EC2 profile IAM Role policy. | list(string) | `[]` | no |
+| disable\_api\_termination | If true, enables EC2 Instance Termination Protection | string | `"false"` | no |
 | dns\_records\_internal\_hosted\_zone | A list of DNS private (internal hosted zone) records to create with the instance's IP | list(any) | `[]` | no |
 | dns\_records\_public\_hosted\_zone | A list of DNS public (public hosted zone) records to create with the instance's IP | list(any) | `[]` | no |
 | ebs\_block\_device | Additional EBS block devices to attach to the instance | list(map(string)) | `[]` | no |
@@ -48,7 +50,7 @@ Personally we have seen the need of creating a similar set of such resources
 | instance\_type | EC2 Instance Type | string | `"t3.micro"` | no |
 | key\_pair\_name | Key Pair Name | string | n/a | yes |
 | monitoring | If true, the launched EC2 instance will have detailed monitoring enabled | bool | `"false"` | no |
-| name | Name | string | `"default"` | no |
+| name | Name | string | n/a | yes |
 | policy\_acctions\_list | Action list for EC2 profile IAM Role policy. | list(string) | `[]` | no |
 | policy\_arn | Attach AWS IAM managed policies to the IAM Role. | list(string) | `[]` | no |
 | prefix | Prefix | string | `"default"` | no |

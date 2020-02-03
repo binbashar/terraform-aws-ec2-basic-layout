@@ -29,6 +29,11 @@ resource "aws_instance" "main" {
   associate_public_ip_address = var.associate_public_ip_address
   user_data                   = var.user_data
   user_data_base64            = var.user_data_base64
+  disable_api_termination     = var.disable_api_termination
+  credit_specification {
+    cpu_credits = var.credit_specification_cpu
+  }
+
 
   dynamic "root_block_device" {
     for_each = var.root_block_device
