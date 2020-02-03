@@ -29,6 +29,10 @@ help:
 #==============================================================#
 # GIT RELEASE 												   #
 #==============================================================#
+release-get: ## release get version
+	# pre-req -> https://github.com/pnikosis/semtag
+	${GIT_SEMTAG_CMD_PREFIX} get
+
 release-patch: ## releasing patch (eg: 0.0.1 -> 0.0.2) based on semantic tagging script for Git
 	# pre-req -> https://github.com/pnikosis/semtag
 	${GIT_SEMTAG_CMD_PREFIX} get
