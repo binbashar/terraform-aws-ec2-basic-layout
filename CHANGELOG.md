@@ -2,6 +2,12 @@
 ## [Unreleased]
 
 
+<a name="v0.3.5"></a>
+## [v0.3.5] - 2020-02-03
+### Pull Requests
+- Merge pull request [#9](https://github.com/binbashar/terraform-aws-ec2-basic-layout/issues/9) from binbashar/BBL-181-terraform-aws-ec2-basic-layout
+
+
 <a name="v0.3.4"></a>
 ## [v0.3.4] - 2020-01-09
 ### Pull Requests
@@ -39,7 +45,8 @@
 <a name="v0.1.0"></a>
 ## v0.1.0 - 2019-09-11
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.4...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.5...HEAD
+[v0.3.5]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.4...v0.3.5
 [v0.3.4]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.3...v0.3.4
 [v0.3.3]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.2...v0.3.3
 [v0.3.2]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.1...v0.3.2
