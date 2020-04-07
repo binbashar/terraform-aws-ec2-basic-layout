@@ -11,7 +11,7 @@ output "aws_instance_private_ip" {
 }
 
 output "aws_instance_public_ip" {
-  description = "Contains the instance private IP address."
+  description = "Contains the instance public IP address."
   value       = aws_eip.this.*.public_ip
 }
 

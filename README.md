@@ -1,9 +1,9 @@
 <div align="center">
-    <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/binbash.png" alt="drawing" width="350"/>
+    <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/binbash.png" alt="binbash" width="250"/>
 </div>
 <div align="right">
   <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/binbash-leverage-terraform.png"
-  alt="leverage" width="230"/>
+  alt="leverage" width="130"/>
 </div>
 
 # Terraform Module: AWS EC2 Basic Layout
@@ -72,7 +72,7 @@ Personally we have seen the need of creating a similar set of such resources
 | aws\_instance\_iam\_profile | The IAM instance profile of the EC2. |
 | aws\_instance\_key\_name | The ssh key pair name of the Instance. |
 | aws\_instance\_private\_ip | Contains the instance private IP address. |
-| aws\_instance\_public\_ip | Contains the instance private IP address. |
+| aws\_instance\_public\_ip | Contains the instance public IP address. |
 | aws\_instance\_type | The type of the Instance. |
 | aws\_instance\_volume\_tags | The root EBS volume tags of the instace. |
 | dns\_record\_private | DNS |
@@ -284,28 +284,12 @@ module "terraform-aws-basic-layout" {
 ---
 
 # Release Management
-
-## Docker based makefile commands
-
-* <https://cloud.docker.com/u/binbash/repository/docker/binbash/git-release>
-* <https://github.com/binbashar/terraform-aws-ec2-basic-layout/blob/master/Makefile>
-
-Root directory `Makefile` has the automated steps (to be integrated with **CircleCI jobs** []() )
-
 ### CircleCi PR auto-release job
 
 <div align="left">
-  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/circleci.png" alt="leverage-circleci" width="230"/>
+  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/circleci-logo.png" alt="circleci" width="130"/>
 </div>
 
-- <https://circleci.com/gh/binbashar/terraform-aws-ec2-basic-layout>
-- **NOTE:** Will only run after merged PR.
-
-### Manual execution from workstation
-
-```
-$ make
-Available Commands:
- - release-major-with-changelog make changelog-major && git add && git commit && make release-major
- - release-minor-with-changelog make changelog-minor && git add && git commit && make release-minor
- - release-patch-with-changelog make changelog-patch && git add && git commit && make release-patch
+- [**pipeline-job**](https://circleci.com/gh/binbashar/terraform-aws-ec2-basic-layout) (**NOTE:** Will only run after merged PR)
+- [**releases**](https://github.com/binbashar/terraform-aws-ec2-basic-layout/releases) 
+- [**changelog**](https://github.com/binbashar/terraform-aws-ec2-basic-layout/blob/master/CHANGELOG.md) 
