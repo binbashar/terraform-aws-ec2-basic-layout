@@ -72,7 +72,7 @@ Personally we have seen the need of creating a similar set of such resources
 | aws\_instance\_iam\_profile | The IAM instance profile of the EC2. |
 | aws\_instance\_key\_name | The ssh key pair name of the Instance. |
 | aws\_instance\_private\_ip | Contains the instance private IP address. |
-| aws\_instance\_public\_ip | Contains the instance private IP address. |
+| aws\_instance\_public\_ip | Contains the instance public IP address. |
 | aws\_instance\_type | The type of the Instance. |
 | aws\_instance\_volume\_tags | The root EBS volume tags of the instace. |
 | dns\_record\_private | DNS |
