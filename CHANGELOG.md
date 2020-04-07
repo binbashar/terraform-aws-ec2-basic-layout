@@ -7,6 +7,11 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.8"></a>
+## [v0.3.8] - 0001-01-01
+
+
+
 <a name="v0.3.7"></a>
 ## [v0.3.7] - 2020-04-07
 
@@ -117,7 +122,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.7...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.8...HEAD
+[v0.3.8]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.7...v0.3.8
 [v0.3.7]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.6...v0.3.7
 [v0.3.6]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.5...v0.3.6
 [v0.3.5]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.4...v0.3.5
