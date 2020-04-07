@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.7"></a>
+## [v0.3.7] - 2020-04-07
+
+- BBL-226 fixing figures urls in README.md
+
+
 <a name="v0.3.6"></a>
 ## [v0.3.6] - 2020-04-07
 
@@ -111,7 +117,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.6...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.7...HEAD
+[v0.3.7]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.6...v0.3.7
 [v0.3.6]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.5...v0.3.6
 [v0.3.5]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.4...v0.3.5
 [v0.3.4]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.3...v0.3.4
