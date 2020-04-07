@@ -291,5 +291,5 @@ module "terraform-aws-basic-layout" {
 </div>
 
 - [**pipeline-job**](https://circleci.com/gh/binbashar/terraform-aws-ec2-basic-layout) (**NOTE:** Will only run after merged PR)
-- [**releases**](https://github.com/binbashar/terraform-aws-ec2-basic-layout/releases) 
-- [**changelog**](https://github.com/binbashar/terraform-aws-ec2-basic-layout/blob/master/CHANGELOG.md) 
+- [**releases**](https://github.com/binbashar/terraform-aws-ec2-basic-layout/releases)
+- [**changelog**](https://github.com/binbashar/terraform-aws-ec2-basic-layout/blob/master/CHANGELOG.md)
