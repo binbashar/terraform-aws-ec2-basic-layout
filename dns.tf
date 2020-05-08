@@ -1,5 +1,5 @@
 resource "aws_route53_record" "main_private" {
-  count = length(var.dns_records_internal_hosted_zone) > 0 && var.associate_public_ip_address == true ? length(var.dns_records_internal_hosted_zone) : 0
+  count = length(var.dns_records_internal_hosted_zone) > 0 ? length(var.dns_records_internal_hosted_zone) : 0
 
   zone_id = lookup(element(var.dns_records_internal_hosted_zone, count.index), "zone_id", null)
   name    = lookup(element(var.dns_records_internal_hosted_zone, count.index), "name", null)
