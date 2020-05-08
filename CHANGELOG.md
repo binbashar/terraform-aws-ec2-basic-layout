@@ -7,8 +7,14 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.9"></a>
+## [v0.3.9] - 2020-05-08
+
+- Remove associate_public_ip_address from being a factor when creating … ([#19](https://github.com/binbashar/terraform-aws-ec2-basic-layout/issues/19))
+
+
 <a name="v0.3.8"></a>
-## [v0.3.8] - 0001-01-01
+## [v0.3.8] - 2020-04-07
 
 
 
@@ -122,7 +128,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.8...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.9...HEAD
+[v0.3.9]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.8...v0.3.9
 [v0.3.8]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.7...v0.3.8
 [v0.3.7]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.6...v0.3.7
 [v0.3.6]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.5...v0.3.6
