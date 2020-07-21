@@ -76,57 +76,18 @@ resource "aws_iam_role_policy_attachment" "this" {
 }
 
 #
-# AWS account services
-# Create and attach AWS IAM customer managed policies
-#
-resource "aws_iam_role_policy_attachment" "basic_instance_aws_services" {
-  count = var.instance_profile == "" && length(var.policy_acctions_list) > 0 ? 1 : 0
-
-  role       = aws_iam_role.basic_instance_assume_role[0].name
-  policy_arn = aws_iam_policy.basic_instance_access[0].arn
-}
-
-
-resource "aws_iam_policy" "basic_instance_access" {
-  count = var.instance_profile == "" && length(var.policy_acctions_list) > 0 ? 1 : 0
-
-  name        = "basic-instance-policy"
-  description = "Access policy for basic_instance"
-  policy      = data.aws_iam_policy_document.instance_access.json
-}
-
-data "aws_iam_policy_document" "instance_access" {
-  policy_id = "ec2AccountPolicyID"
-
-  statement {
-    actions = [
-      for policy_acctions in var.policy_acctions_list :
-      policy_acctions
-    ]
-
-    effect = "Allow"
-
-    resources = [
-      "*",
-    ]
-
-    sid = "ec2CustomServicesStatementID"
-  }
-}
-
-#
 # AWS cross-acocunt services by assumable role
 # Create and attach AWS IAM customer managed policies
 #
 resource "aws_iam_role_policy_attachment" "basic_instance_aws_roles" {
-  count = var.instance_profile == "" && length(var.policy_acctions_list) > 0 ? 1 : 0
+  count = var.instance_profile == "" && length(var.cross_account_roles_resource_arn_list) > 0 ? 1 : 0
 
   role       = aws_iam_role.basic_instance_assume_role[0].name
   policy_arn = aws_iam_policy.cross_org_instance_access[0].arn
 }
 
 resource "aws_iam_policy" "cross_org_instance_access" {
-  count = var.instance_profile == "" && length(var.policy_acctions_list) > 0 ? 1 : 0
+  count = var.instance_profile == "" && length(var.cross_account_roles_resource_arn_list) > 0 ? 1 : 0
 
   name        = "cross-org-instance-policy"
   description = "Access policy for basic_instance"

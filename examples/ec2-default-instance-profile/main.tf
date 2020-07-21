@@ -77,16 +77,7 @@ module "terraform-aws-basic-layout" {
     "arn:aws:iam::${var.dev_account_id}:role/Auditor",
     "arn:aws:iam::${var.shared_account_id}:role/Auditor",
   ]
-  policy_acctions_list = [
-    "ecr:*",
-    "ssm:*",
-    "route53:*",
-    "s3:ListBucket",
-    "s3:PutObject",
-    "s3:PutObjectAcl",
-    "s3:GetObject",
-    "s3:DeleteObject"
-  ]
+
   policy_arn = [
     "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess",
     "arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess",

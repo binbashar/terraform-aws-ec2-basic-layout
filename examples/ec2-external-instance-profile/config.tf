@@ -2,8 +2,10 @@
 # AWS Provider Settings       #
 #=============================#
 provider "aws" {
-  region  = var.region
-  profile = var.profile
+  version                 = "~> 2.70"
+  region                  = var.region
+  profile                 = var.profile
+  shared_credentials_file = "~/.aws/bb/config"
 }
 
 variable "region" {
@@ -14,7 +16,7 @@ variable "region" {
 variable "profile" {
   description = "AWS Profile"
   default     = "bb-dev-deploymaster" # ci aws-iam-profile
-  #default = "bb-shared-deploymaster" # localhost aws-iam-profile
+  #default    = "bb-shared-devops"    # localhost aws-iam-profile
 }
 
 #=============================#
