@@ -126,12 +126,6 @@ variable "policy_arn" {
   default     = []
 }
 
-variable "policy_acctions_list" {
-  type        = list(string)
-  description = "Action list for EC2 profile IAM Role policy."
-  default     = []
-}
-
 variable "cross_account_roles_resource_arn_list" {
   type        = list(string)
   description = "Resources arn list for cross org roles for EC2 profile IAM Role policy."

@@ -51,7 +51,6 @@ Personally we have seen the need of creating a similar set of such resources
 | key\_pair\_name | Key Pair Name | string | n/a | yes |
 | monitoring | If true, the launched EC2 instance will have detailed monitoring enabled | bool | `"false"` | no |
 | name | Name | string | n/a | yes |
-| policy\_acctions\_list | Action list for EC2 profile IAM Role policy. | list(string) | `[]` | no |
 | policy\_arn | Attach AWS IAM managed policies to the IAM Role. | list(string) | `[]` | no |
 | prefix | Prefix | string | `"default"` | no |
 | root\_block\_device | Customize details about the root block device of the instance. See Block Devices below for details | list(map(string)) | `[]` | no |
@@ -179,16 +178,6 @@ module "terraform-aws-basic-layout" {
         "arn:aws:iam::${var.shared_account_id}:role/DevOps",
         "arn:aws:iam::${var.dev_account_id}:role/Auditor",
         "arn:aws:iam::${var.shared_account_id}:role/Auditor",
-    ]
-    policy_acctions_list = [
-        "ecr:*",
-        "ssm:*",
-        "route53:*",
-        "s3:ListBucket",
-        "s3:PutObject",
-        "s3:PutObjectAcl",
-        "s3:GetObject",
-        "s3:DeleteObject"
     ]
     policy_arn = [
         "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess",
