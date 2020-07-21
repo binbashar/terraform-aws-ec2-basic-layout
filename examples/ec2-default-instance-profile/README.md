@@ -18,11 +18,17 @@ Personally we have seen the need of creating a similar set of such resources for
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
+| key\_pair\_name | Key Pair Name | string | n/a | yes |
+| name | Name | string | n/a | yes |
+| subnet\_id | Subnet ID | string | n/a | yes |
+| vpc\_id | VPC ID | string | n/a | yes |
 | ami\_id | AMI Identifier | string | `""` | no |
 | associate\_public\_ip\_address | Associate a public IP address with the instance | bool | `"false"` | no |
 | aws\_ami\_os\_id | AWS AMI Operating System Identificator | string | `"ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-*"` | no |
 | aws\_ami\_os\_owner | AWS AMI Operating System Owner, eg: 099720109477 for Canonical | string | `"099720109477"` | no |
+| credit\_specification\_cpu | Can be applied/modified to the EC2 at any time. The credit option for CPU usage. Can be 'standard' or 'unlimited'. By default T3 = unlimited & T2 'standard'. | string | `"unlimited"` | no |
 | cross\_account\_roles\_resource\_arn\_list | Resources arn list for cross org roles for EC2 profile IAM Role policy. | list(string) | `[]` | no |
+| disable\_api\_termination | If true, enables EC2 Instance Termination Protection | string | `"false"` | no |
 | dns\_records\_internal\_hosted\_zone | A list of DNS private (internal hosted zone) records to create with the instance's IP | list(any) | `[]` | no |
 | dns\_records\_public\_hosted\_zone | A list of DNS public (public hosted zone) records to create with the instance's IP | list(any) | `[]` | no |
 | ebs\_block\_device | Additional EBS block devices to attach to the instance | list(map(string)) | `[]` | no |
@@ -30,20 +36,15 @@ Personally we have seen the need of creating a similar set of such resources for
 | ephemeral\_block\_device | Customize Ephemeral (also known as Instance Store) volumes on the instance | list(map(string)) | `[]` | no |
 | instance\_profile | The IAM Instance Profile to launch the instance with. Specified as the name of the Instance Profile. | string | `""` | no |
 | instance\_type | EC2 Instance Type | string | `"t3.micro"` | no |
-| key\_pair\_name | Key Pair Name | string | n/a | yes |
 | monitoring | If true, the launched EC2 instance will have detailed monitoring enabled | bool | `"false"` | no |
-| name | Name | string | `"default"` | no |
-| policy\_acctions\_list | Action list for EC2 profile IAM Role policy. | list(string) | `[]` | no |
 | policy\_arn | Attach AWS IAM managed policies to the IAM Role. | list(string) | `[]` | no |
 | prefix | Prefix | string | `"default"` | no |
 | root\_block\_device | Customize details about the root block device of the instance. See Block Devices below for details | list(map(string)) | `[]` | no |
 | root\_device\_backup\_tag | EC2 Root Block Device backup tag | string | `"True"` | no |
 | security\_group\_rules | A list of security group rules | list(any) | `[]` | no |
-| subnet\_id | Subnet ID | string | n/a | yes |
 | tags | Tags | map(string) | `{}` | no |
 | user\_data | The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see user_data_base64 instead. | string | `"null"` | no |
 | user\_data\_base64 | Can be used instead of user_data to pass base64-encoded binary data directly. Use this instead of user_data whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption. | string | `"null"` | no |
-| vpc\_id | VPC ID | string | n/a | yes |
 
 ## Outputs
 
@@ -54,7 +55,7 @@ Personally we have seen the need of creating a similar set of such resources for
 | aws\_instance\_iam\_profile | The IAM instance profile of the EC2. |
 | aws\_instance\_key\_name | The ssh key pair name of the Instance. |
 | aws\_instance\_private\_ip | Contains the instance private IP address. |
-| aws\_instance\_public\_ip | Contains the instance private IP address. |
+| aws\_instance\_public\_ip | Contains the instance public IP address. |
 | aws\_instance\_type | The type of the Instance. |
 | aws\_instance\_volume\_tags | The root EBS volume tags of the instace. |
 | dns\_record\_private | DNS |
@@ -147,16 +148,6 @@ module "terraform-aws-basic-layout" {
         "arn:aws:iam::${var.shared_account_id}:role/DevOps",
         "arn:aws:iam::${var.dev_account_id}:role/Auditor",
         "arn:aws:iam::${var.shared_account_id}:role/Auditor",
-    ]
-    policy_acctions_list = [
-        "ecr:*",
-        "ssm:*",
-        "route53:*",
-        "s3:ListBucket",
-        "s3:PutObject",
-        "s3:PutObjectAcl",
-        "s3:GetObject",
-        "s3:DeleteObject"
     ]
     policy_arn = [
         "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess",

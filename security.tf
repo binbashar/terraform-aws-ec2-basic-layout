@@ -80,14 +80,14 @@ resource "aws_iam_role_policy_attachment" "this" {
 # Create and attach AWS IAM customer managed policies
 #
 resource "aws_iam_role_policy_attachment" "basic_instance_aws_roles" {
-  count = var.instance_profile == "" ? 1 : 0
+  count = var.instance_profile == "" && length(var.cross_account_roles_resource_arn_list) > 0 ? 1 : 0
 
   role       = aws_iam_role.basic_instance_assume_role[0].name
   policy_arn = aws_iam_policy.cross_org_instance_access[0].arn
 }
 
 resource "aws_iam_policy" "cross_org_instance_access" {
-  count = var.instance_profile == "" ? 1 : 0
+  count = var.instance_profile == "" && length(var.cross_account_roles_resource_arn_list) > 0 ? 1 : 0
 
   name        = "cross-org-instance-policy"
   description = "Access policy for basic_instance"
