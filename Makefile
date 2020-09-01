@@ -17,8 +17,8 @@ LOCAL_OS_AWS_REGION   := us-east-1
 TF_PWD_DIR            := $(shell pwd)
 TF_VER                := 0.12.28
 TF_PWD_CONT_DIR       := "/go/src/project/"
-TF_DOCKER_ENTRYPOINT  := /usr/local/go/bin/terraform
-TF_DOCKER_IMAGE       := binbash/terraform-resources
+TF_DOCKER_ENTRYPOINT  := /bin/terraform
+TF_DOCKER_IMAGE       := binbash/terraform-awscli-terratest-slim
 
 TERRATEST_DOCKER_ENTRYPOINT := dep
 TERRATEST_DOCKER_WORKDIR    := /go/src/project/tests
@@ -67,6 +67,7 @@ docker run --rm \
 -v ${TF_PWD_DIR}:${TF_PWD_CONT_DIR}:rw \
 -v ${LOCAL_OS_SSH_DIR}:/root/.ssh \
 -v ${LOCAL_OS_GIT_CONF_DIR}:/etc/gitconfig \
+-w ${TERRATEST_DOCKER_WORKDIR} \
 --entrypoint=${TERRATEST_DOCKER_ENTRYPOINT} \
 -it ${TF_DOCKER_IMAGE}:${TF_VER}
 endef
@@ -120,8 +121,8 @@ terratest-dep-init: ## dep is a dependency management tool for Go. (https://gith
 	${TERRATEST_DEP_CMD_PREFIX} init
 	${TERRATEST_DEP_CMD_PREFIX} ensure
 	sudo chown -R ${LOCAL_OS_USER_ID}:${LOCAL_OS_GROUP_ID} .
-	cp -r ./vendor ./tests/ && rm -rf ./vendor
-	cp -r ./Gopkg* ./tests/ && rm -rf ./Gopkg*
+	rm -rf ./tests/vendor
+	rm -rf ./tests/Gopkg*
 
 terratest-go-test: ## Run E2E terratests
 	${TERRATEST_GO_CMD_PREFIX} test -timeout 20m
