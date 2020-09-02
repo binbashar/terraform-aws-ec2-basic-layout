@@ -52,7 +52,7 @@ data "terraform_remote_state" "dns" {
     region  = var.region_backend_data
     profile = var.profile
     bucket  = "bb-shared-terraform-backend"
-    key     = "shared/dns/terraform.tfstate"
+    key     = "shared/dns/binbash.com.ar/terraform.tfstate"
   }
 }
 
@@ -63,6 +63,6 @@ data "terraform_remote_state" "security" {
     region  = var.region_backend_data
     profile = var.profile
     bucket  = "bb-shared-terraform-backend"
-    key     = "shared/security/terraform.tfstate"
+    key     = "shared/security-keys/terraform.tfstate"
   }
 }
