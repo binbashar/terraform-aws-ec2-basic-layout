@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.12"></a>
+## [v0.3.12] - 2020-09-02
+
+- Update Terraform image to use the new slim image and also update test fixtures according to refactors made to Leverage DNS and Security layers ([#22](https://github.com/binbashar/terraform-aws-ec2-basic-layout/issues/22))
+
+
 <a name="v0.3.11"></a>
 ## [v0.3.11] - 2020-08-20
 
@@ -144,7 +150,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.11...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.12...HEAD
+[v0.3.12]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.11...v0.3.12
 [v0.3.11]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.10...v0.3.11
 [v0.3.10]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.9...v0.3.10
 [v0.3.9]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.8...v0.3.9
