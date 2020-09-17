@@ -21,7 +21,8 @@ init-makefiles: ## initialize makefiles
 ## IMPORTANT: Automatically managed
 ## Must NOT UNCOMMENT the #include lines below
 #
-#include ${MAKEFILES_DIR}/circleci/circleci.mk
-#include ${MAKEFILES_DIR}/release-mgmt/release.mk
-#include ${MAKEFILES_DIR}/terraform12/terraform12.mk
-#include ${MAKEFILES_DIR}/terratest12/terratest12.mk
+include ${MAKEFILES_DIR}/circleci/circleci.mk
+include ${MAKEFILES_DIR}/release-mgmt/release.mk
+include ${MAKEFILES_DIR}/terraform12/terraform12.mk
+include ${MAKEFILES_DIR}/terratest12/terratest12.mk
+
