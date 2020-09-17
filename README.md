@@ -29,6 +29,19 @@ Personally we have seen the need of creating a similar set of such resources
  for an OpenVPN instance, for Jenkins, Spinnaker, DroneCI, Prometheus, Grafana,
  Hashicorp Vault, ElasticSearch, Kibana and so forth.
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12.28 |
+| aws | >= 2.70.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | >= 2.70.0 |
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
@@ -271,6 +284,45 @@ module "terraform-aws-basic-layout" {
 ```
 
 ---
+
+## Binbash Leverage | DevOps Automation Code Library Integration
+
+In order to get the full automated potential of the
+[Binbash Leverage DevOps Automation Code Library](https://leverage.binbash.com.ar/how-it-works/code-library/code-library/)  
+you should initialize all the necessary helper **Makefiles**. 
+
+#### How? 
+You must execute the `make init-makefiles` command  at the root context
+   
+```shell
+╭─delivery at delivery-I7567 in ~/terraform/terraform-aws-backup-by-tags on master✔ 20-09-17
+╰─⠠⠵ make
+Available Commands:
+ - init-makefiles     initialize makefiles
+
+``` 
+
+### Why? 
+You'll get all the necessary commands to automatically operate this module via a dockerized approach, 
+example shown below
+
+```shell
+╭─delivery at delivery-I7567 in ~/terraform/terraform-aws-backup-by-tags on master✔ 20-09-17
+╰─⠠⠵ make
+Available Commands:
+ - circleci-validate-config  ## Validate A CircleCI Config (https
+ - format-check        ## The terraform fmt is used to rewrite tf conf files to a canonical format and style.
+ - format              ## The terraform fmt is used to rewrite tf conf files to a canonical format and style.
+ - tf-dir-chmod        ## run chown in ./.terraform to gran that the docker mounted dir has the right permissions
+ - version             ## Show terraform version
+ - init-makefiles      ## initialize makefiles
+``` 
+
+```shell
+╭─delivery at delivery-I7567 in ~/terraform/terraform-aws-backup-by-tags on master✔ 20-09-17
+╰─⠠⠵ make format-check 
+docker run --rm -v /home/delivery/Binbash/repos/Leverage/terraform/terraform-aws-backup-by-tags:"/go/src/project/":rw -v :/config -v /common.config:/common-config/common.config -v ~/.ssh:/root/.ssh -v ~/.gitconfig:/etc/gitconfig -v ~/.aws/bb:/root/.aws/bb -e AWS_SHARED_CREDENTIALS_FILE=/root/.aws/bb/credentials -e AWS_CONFIG_FILE=/root/.aws/bb/config --entrypoint=/bin/terraform -w "/go/src/project/" -it binbash/terraform-awscli-slim:0.12.28 fmt -check
+```
 
 # Release Management
 ### CircleCi PR auto-release job
