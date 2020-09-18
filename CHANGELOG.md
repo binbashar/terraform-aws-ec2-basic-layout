@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.14"></a>
+## [v0.3.14] - 2020-09-18
+
+- BBL-381 | minor readme.md figures resizeing update
+
+
 <a name="v0.3.13"></a>
 ## [v0.3.13] - 2020-09-18
 
@@ -162,7 +168,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.13...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.14...HEAD
+[v0.3.14]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.13...v0.3.14
 [v0.3.13]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.12...v0.3.13
 [v0.3.12]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.11...v0.3.12
 [v0.3.11]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.10...v0.3.11
