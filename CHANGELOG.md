@@ -7,6 +7,18 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.13"></a>
+## [v0.3.13] - 2020-09-18
+
+- Merge branch 'master' into BBL-381-testing-ci
+- BBL-381 | adding makefile must have commented lines
+- BBL-381 | mirnor README.md params update
+- BBL-381 | updating versions.tf + README.md + pre-commit md
+- BBL-381 | updating Makefile w/ must have comments
+- BBL-381 | updating pre-commit repo versions
+- BBL-381 | standalone makefile approach implemented + README.md implemented
+
+
 <a name="v0.3.12"></a>
 ## [v0.3.12] - 2020-09-02
 
@@ -150,7 +162,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.12...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.13...HEAD
+[v0.3.13]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.12...v0.3.13
 [v0.3.12]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.11...v0.3.12
 [v0.3.11]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.10...v0.3.11
 [v0.3.10]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.9...v0.3.10
