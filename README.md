@@ -29,20 +29,19 @@ Personally we have seen the need of creating a similar set of such resources
  for an OpenVPN instance, for Jenkins, Spinnaker, DroneCI, Prometheus, Grafana,
  Hashicorp Vault, ElasticSearch, Kibana and so forth.
 
-## Requirements  
-
-| Name | Version |  
-|------|---------|  
-| terraform | >= 0.13.2 |  
-| aws | ~> 3.0 |  
-
-## Providers  
-
-| Name | Version |  
-|------|---------|  
-| aws | ~> 3.0 |  
-
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13.2 |
+| aws | ~> 3.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | ~> 3.0 |
 
 ## Inputs
 
