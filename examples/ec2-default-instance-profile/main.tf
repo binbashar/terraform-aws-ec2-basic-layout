@@ -10,7 +10,7 @@ module "terraform-aws-basic-layout" {
   vpc_id                      = data.terraform_remote_state.vpc.outputs.vpc_id
   subnet_id                   = data.terraform_remote_state.vpc.outputs.public_subnets[0]
   associate_public_ip_address = var.associate_public_ip_address
-  key_pair_name               = data.terraform_remote_state.security.outputs.aws_key_pair_name
+  key_pair_name               = data.terraform_remote_state.security-keys.outputs.aws_key_pair_name
   ebs_optimized               = var.ebs_optimized
   monitoring                  = var.monitoring
   user_data_base64            = base64encode(local.user_data)

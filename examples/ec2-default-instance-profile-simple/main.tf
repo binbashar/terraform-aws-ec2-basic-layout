@@ -28,5 +28,5 @@ module "terraform-aws-basic-layout" {
   name          = var.name
   vpc_id        = data.terraform_remote_state.vpc.outputs.vpc_id
   subnet_id     = data.terraform_remote_state.vpc.outputs.public_subnets[0]
-  key_pair_name = data.terraform_remote_state.security.outputs.aws_key_pair_name
+  key_pair_name = data.terraform_remote_state.security-keys.outputs.aws_key_pair_name
 }

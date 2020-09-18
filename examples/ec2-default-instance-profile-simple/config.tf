@@ -2,7 +2,7 @@
 # AWS Provider Settings       #
 #=============================#
 provider "aws" {
-  version                 = "~> 2.70"
+  version                 = "~> 3.0"
   region                  = var.region
   profile                 = var.profile
   shared_credentials_file = "~/.aws/bb/config"
@@ -23,7 +23,7 @@ variable "profile" {
 # Backend Config (partial)    #
 #=============================#
 terraform {
-  required_version = ">= 0.12.20"
+  required_version = ">= 0.13.2"
 }
 
 #=============================#
@@ -52,17 +52,17 @@ data "terraform_remote_state" "dns" {
     region  = var.region_backend_data
     profile = var.profile
     bucket  = "bb-shared-terraform-backend"
-    key     = "shared/dns/terraform.tfstate"
+    key     = "shared/dns/binbash.com.ar/terraform.tfstate"
   }
 }
 
-data "terraform_remote_state" "security" {
+data "terraform_remote_state" "security-keys" {
   backend = "s3"
 
   config = {
     region  = var.region_backend_data
     profile = var.profile
     bucket  = "bb-shared-terraform-backend"
-    key     = "shared/security/terraform.tfstate"
+    key     = "shared/security-keys/terraform.tfstate"
   }
 }
