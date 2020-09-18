@@ -1,5 +1,6 @@
 <div align="center">
-    <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/binbash-logo.png" alt="binbash" width="250"/>
+    <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/binbash-logo.png"
+     alt="binbash" width="250"/>
 </div>
 <div align="right">
   <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/binbash-leverage-terraform-logo.png"
@@ -328,7 +329,8 @@ docker run --rm -v /home/delivery/Binbash/repos/Leverage/terraform/terraform-aws
 ### CircleCi PR auto-release job
 
 <div align="left">
-  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/circleci-logo.png" alt="circleci" width="130"/>
+  <img src="https://raw.githubusercontent.com/binbashar/terraform-aws-ec2-basic-layout/master/figures/circleci-logo.png"
+   alt="circleci" width="130"/>
 </div>
 
 - [**pipeline-job**](https://circleci.com/gh/binbashar/terraform-aws-ec2-basic-layout) (**NOTE:** Will only run after merged PR)
