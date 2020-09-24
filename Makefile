@@ -25,3 +25,4 @@ init-makefiles: ## initialize makefiles
 #include ${MAKEFILES_DIR}/release-mgmt/release.mk
 #include ${MAKEFILES_DIR}/terraform13/terraform13.mk
 #include ${MAKEFILES_DIR}/terratest13/terratest13.mk
+
