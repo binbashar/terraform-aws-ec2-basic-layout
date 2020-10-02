@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.16"></a>
+## [v0.3.16] - 2020-10-02
+
+- BBL-381 | updating makefile include sintaxt + circleci sumologic integration
+
+
 <a name="v0.3.15"></a>
 ## [v0.3.15] - 2020-09-24
 
@@ -174,7 +180,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.15...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.16...HEAD
+[v0.3.16]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.15...v0.3.16
 [v0.3.15]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.14...v0.3.15
 [v0.3.14]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.13...v0.3.14
 [v0.3.13]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.12...v0.3.13
