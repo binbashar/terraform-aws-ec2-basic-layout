@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.17"></a>
+## [v0.3.17] - 2020-10-02
+
+- Merge branch 'master' of github.com:binbashar/terraform-aws-ec2-basic-layout
+- BBL-381 | adding trailing space at makefile
+
+
 <a name="v0.3.16"></a>
 ## [v0.3.16] - 2020-10-02
 
@@ -180,7 +187,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.16...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.17...HEAD
+[v0.3.17]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.16...v0.3.17
 [v0.3.16]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.15...v0.3.16
 [v0.3.15]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.14...v0.3.15
 [v0.3.14]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.13...v0.3.14
