@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.19"></a>
+## [v0.3.19] - 2020-10-21
+
+- BBL-192 | updating variable description
+
+
 <a name="v0.3.18"></a>
 ## [v0.3.18] - 2020-10-21
 
@@ -196,7 +202,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.18...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.19...HEAD
+[v0.3.19]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.18...v0.3.19
 [v0.3.18]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.17...v0.3.18
 [v0.3.17]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.16...v0.3.17
 [v0.3.16]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.15...v0.3.16
