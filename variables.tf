@@ -98,7 +98,7 @@ variable "tags" {
 
 variable "tagApprovedAMIvalue" {
   type        = string
-  description = "Tags"
+  description = "Set the specific tag ApprovedAMI ('true' | 'false') that identifies aws-config compliant AMIs"
   default     = "false"
 }
 
