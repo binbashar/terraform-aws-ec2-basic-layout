@@ -16,7 +16,7 @@ data "aws_ami" "ubuntu_linux" {
   //  match the search above. So, in order to be safe, you need to verify that the owner of the ami is '099720109477'.
   owners = [var.aws_ami_os_owner] # Canonical
 
-  tags        = var.tags
+  tags = var.tags
 }
 
 resource "aws_instance" "main" {
