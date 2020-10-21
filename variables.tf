@@ -96,6 +96,12 @@ variable "tags" {
   default     = {}
 }
 
+variable "tagApprovedAMIvalue" {
+  type        = string
+  description = "Tags"
+  default     = "false"
+}
+
 variable "root_device_backup_tag" {
   type        = string
   description = "EC2 Root Block Device backup tag"

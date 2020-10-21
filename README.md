@@ -72,6 +72,7 @@ Personally we have seen the need of creating a similar set of such resources
 | root\_block\_device | Customize details about the root block device of the instance. See Block Devices below for details | `list(map(string))` | `[]` | no |
 | root\_device\_backup\_tag | EC2 Root Block Device backup tag | `string` | `"True"` | no |
 | security\_group\_rules | A list of security group rules | `list(any)` | `[]` | no |
+| tagApprovedAMIvalue | Tags | `string` | `"false"` | no |
 | tags | Tags | `map(string)` | `{}` | no |
 | user\_data | The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see user\_data\_base64 instead. | `string` | `null` | no |
 | user\_data\_base64 | Can be used instead of user\_data to pass base64-encoded binary data directly. Use this instead of user\_data whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption. | `string` | `null` | no |
