@@ -7,6 +7,15 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.18"></a>
+## [v0.3.18] - 2020-10-21
+
+- BBL-192 | adding var to README.md
+- BBL-192 | updating AMI tags to follow aws-config expected security workflow
+- BBL-192 | make format applied
+- BBL-192 | taggin ami to approve and pass aws-config approved-amis-by-tag rule
+
+
 <a name="v0.3.17"></a>
 ## [v0.3.17] - 2020-10-02
 
@@ -187,7 +196,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.17...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.18...HEAD
+[v0.3.18]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.17...v0.3.18
 [v0.3.17]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.16...v0.3.17
 [v0.3.16]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.15...v0.3.16
 [v0.3.15]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.14...v0.3.15
