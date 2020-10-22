@@ -96,7 +96,7 @@ variable "tags" {
   default     = {}
 }
 
-variable "tagApprovedAMIvalue" {
+variable "tag_approved_ami_value" {
   type        = string
   description = "Set the specific tag ApprovedAMI ('true' | 'false') that identifies aws-config compliant AMIs"
   default     = "false"
