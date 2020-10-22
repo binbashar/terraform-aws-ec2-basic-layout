@@ -19,7 +19,7 @@ data "aws_ami" "ubuntu_linux" {
   tags = merge(
     var.tags,
     {
-      ApprovedAMI = var.tagApprovedAMIvalue
+      ApprovedAMI = var.tag_approved_ami_value
     },
   )
 }
