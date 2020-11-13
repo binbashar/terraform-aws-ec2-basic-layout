@@ -28,8 +28,8 @@ jobs:
       - run:
           name: test1-terraform-format
           command: |
-          pip install pre-commit
-          make pre-commit
+            pip install pre-commit
+            make pre-commit
 
       - run:
           name: Install awscli
