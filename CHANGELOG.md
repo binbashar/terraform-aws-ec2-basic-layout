@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.22"></a>
+## [v0.3.22] - 2020-11-13
+
+- BBL-440 | circleci config slack notif updated
+- BBL-440 | updating circleci slack notif
+
+
 <a name="v0.3.21"></a>
 ## [v0.3.21] - 2020-11-13
 
@@ -221,7 +228,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.21...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.22...HEAD
+[v0.3.22]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.21...v0.3.22
 [v0.3.21]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.20...v0.3.21
 [v0.3.20]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.19...v0.3.20
 [v0.3.19]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.18...v0.3.19
