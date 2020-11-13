@@ -2,7 +2,7 @@ version: 2.1
 
 jobs:
   #
-  # Test 1 & Test 2
+  # Automated Tests
   #
   test-static-code-and-linting:
     machine:
@@ -26,7 +26,7 @@ jobs:
             git update-index --assume-unchanged "Makefile"
 
       - run:
-          name: test1-terraform-format-and-docs
+          name: test-terraform-format-and-docs
           command: |
             #
             # Install pre-commit
@@ -74,7 +74,7 @@ jobs:
             cp /home/circleci/.aws/config /home/circleci/.aws/bb/config
 
       - run:
-          name: test2-terraform-linting
+          name: test-terraform-linting
           command: make tflint-deep
 
       - slack/notify:
@@ -88,7 +88,7 @@ jobs:
           channel: 'tools-ci'
 
   #
-  # Test 3
+  # E2E Tests
   #
   test-e2e-terratests:
     machine:
@@ -134,11 +134,11 @@ jobs:
           command: aws ec2 describe-instances --region us-east-1 --profile $AWS_PROFILE_NAME
 
       - run:
-          name: test3-terratests-dep-init
+          name: test-terratests-dep-init
           command: make terratest-dep-init
 
       - run:
-          name: test3-terratests-go-test
+          name: test-terratests-go-test
           command: make terratest-go-test
 
       - slack/notify:
