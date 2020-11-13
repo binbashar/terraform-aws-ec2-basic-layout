@@ -7,6 +7,19 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.21"></a>
+## [v0.3.21] - 2020-11-13
+
+- BBL-440 | adding circleci slack orb for notifications
+- BBL-440 | re-enabling terratest
+- BBL-440 | adding terraform binary for pre-commit exec
+- BBL-440 | updating mv with sudo + temporally disabling terratest jobs
+- BBL-440 | fixing terraform-docs installation
+- BBL-440 | adding missing terraform-docs binary dep
+- BBL-440 | fixing circleci/config.yml sintaxt
+- BBL-440 | makefile lib ver approach added + pre-commit for ci
+
+
 <a name="v0.3.20"></a>
 ## [v0.3.20] - 2020-10-22
 
@@ -208,7 +221,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.20...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.21...HEAD
+[v0.3.21]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.20...v0.3.21
 [v0.3.20]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.19...v0.3.20
 [v0.3.19]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.18...v0.3.19
 [v0.3.18]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.17...v0.3.18
