@@ -48,10 +48,6 @@ Personally we have seen the need of creating a similar set of such resources
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| key\_pair\_name | Key Pair Name | `string` | n/a | yes |
-| name | Name | `string` | n/a | yes |
-| subnet\_id | Subnet ID | `string` | n/a | yes |
-| vpc\_id | VPC ID | `string` | n/a | yes |
 | ami\_id | AMI Identifier | `string` | `""` | no |
 | associate\_public\_ip\_address | Associate a public IP address with the instance | `bool` | `false` | no |
 | aws\_ami\_os\_id | AWS AMI Operating System Identificator | `string` | `"ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-*"` | no |
@@ -66,16 +62,20 @@ Personally we have seen the need of creating a similar set of such resources
 | ephemeral\_block\_device | Customize Ephemeral (also known as Instance Store) volumes on the instance | `list(map(string))` | `[]` | no |
 | instance\_profile | The IAM Instance Profile to launch the instance with. Specified as the name of the Instance Profile. | `string` | `""` | no |
 | instance\_type | EC2 Instance Type | `string` | `"t3.micro"` | no |
+| key\_pair\_name | Key Pair Name | `string` | n/a | yes |
 | monitoring | If true, the launched EC2 instance will have detailed monitoring enabled | `bool` | `false` | no |
+| name | Name | `string` | n/a | yes |
 | policy\_arn | Attach AWS IAM managed policies to the IAM Role. | `list(string)` | `[]` | no |
 | prefix | Prefix | `string` | `"default"` | no |
 | root\_block\_device | Customize details about the root block device of the instance. See Block Devices below for details | `list(map(string))` | `[]` | no |
 | root\_device\_backup\_tag | EC2 Root Block Device backup tag | `string` | `"True"` | no |
 | security\_group\_rules | A list of security group rules | `list(any)` | `[]` | no |
-| tagApprovedAMIvalue | Set the specific tag ApprovedAMI ('true' \| 'false') that identifies aws-config compliant AMIs | `string` | `"false"` | no |
+| subnet\_id | Subnet ID | `string` | n/a | yes |
+| tag\_approved\_ami\_value | Set the specific tag ApprovedAMI ('true' \| 'false') that identifies aws-config compliant AMIs | `string` | `"false"` | no |
 | tags | Tags | `map(string)` | `{}` | no |
 | user\_data | The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see user\_data\_base64 instead. | `string` | `null` | no |
 | user\_data\_base64 | Can be used instead of user\_data to pass base64-encoded binary data directly. Use this instead of user\_data whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption. | `string` | `null` | no |
+| vpc\_id | VPC ID | `string` | n/a | yes |
 
 ## Outputs
 
