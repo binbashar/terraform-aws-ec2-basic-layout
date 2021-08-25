@@ -7,8 +7,19 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.25"></a>
+## [v0.3.25] - 2021-08-25
+
+- Updating terratest expected outputs for testcase num 3
+- fixing terratest expected outputs
+- updating README.md based in terraform-docs exec
+- unifing circleci tests
+- upgrading terraform, circleci vm and awscli to python3 compatible version
+- updating license
+
+
 <a name="v0.3.24"></a>
-## [v0.3.24] - 0001-01-01
+## [v0.3.24] - 2021-08-13
 
 
 
@@ -239,7 +250,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.24...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.25...HEAD
+[v0.3.25]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.24...v0.3.25
 [v0.3.24]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.23...v0.3.24
 [v0.3.23]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.22...v0.3.23
 [v0.3.22]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.21...v0.3.22
