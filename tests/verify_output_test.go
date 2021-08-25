@@ -16,8 +16,8 @@ func TestAwsEc2BasicLayoutCase1(t *testing.T) {
     expectedValue3  := "bb-infra-deployer"
     expectedValue4  := "basic-instance-profile-infra-ec2-test"
     expectedValue5  := "basic-instance-role-infra-ec2-test"
-    expectedValue6  := "[\n  \"ec2-basic-layout.aws.binbash.com.ar\",\n]"
-    expectedValue7  := "[\n  \"ec2-basic-layout.binbash.com.ar\",\n]"
+    expectedValue6  := "[ec2-basic-layout.aws.binbash.com.ar]"
+    expectedValue7  := "[ec2-basic-layout.binbash.com.ar]"
 
     terraformOptions := &terraform.Options {
         // The path to where our Terraform code is located
@@ -106,8 +106,8 @@ func TestAwsEc2BasicLayoutCase3(t *testing.T) {
     expectedValue3  := "bb-infra-deployer"
     expectedValue4  := "basic-instance-profile-external"
     expectedValue5  := ""
-    expectedValue6  := "[\n  \"ec2-basic-layout.aws.binbash.com.ar\",\n]"
-    expectedValue7  := "[\n  \"ec2-basic-layout.binbash.com.ar\",\n]"
+    expectedValue6  := "[ec2-basic-layout.aws.binbash.com.ar]"
+    expectedValue7  := "[ec2-basic-layout.binbash.com.ar]"
 
     terraformOptions := &terraform.Options {
         // The path to where our Terraform code is located
