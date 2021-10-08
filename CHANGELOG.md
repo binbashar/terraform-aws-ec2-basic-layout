@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.26"></a>
+## [v0.3.26] - 2021-10-08
+
+- Create FUNDING.yml
+
+
 <a name="v0.3.25"></a>
 ## [v0.3.25] - 2021-08-25
 
@@ -250,7 +256,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.25...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.26...HEAD
+[v0.3.26]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.25...v0.3.26
 [v0.3.25]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.24...v0.3.25
 [v0.3.24]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.23...v0.3.24
 [v0.3.23]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.22...v0.3.23
