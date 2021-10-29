@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.27"></a>
+## [v0.3.27] - 2021-10-29
+
+- Replace map function which is no longer supported in Terraform v1.x ([#30](https://github.com/binbashar/terraform-aws-ec2-basic-layout/issues/30))
+
+
 <a name="v0.3.26"></a>
 ## [v0.3.26] - 2021-10-08
 
@@ -256,7 +262,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.26...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.27...HEAD
+[v0.3.27]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.26...v0.3.27
 [v0.3.26]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.25...v0.3.26
 [v0.3.25]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.24...v0.3.25
 [v0.3.24]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.23...v0.3.24
