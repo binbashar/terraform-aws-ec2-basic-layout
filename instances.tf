@@ -77,7 +77,7 @@ resource "aws_instance" "main" {
     }
   }
 
-  volume_tags = merge(var.tags, map("Backup", var.root_device_backup_tag))
+  volume_tags = merge(var.tags, { "Backup" = var.root_device_backup_tag })
   tags        = var.tags
 
   lifecycle {
