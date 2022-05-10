@@ -2,10 +2,9 @@
 # AWS Provider Settings       #
 #=============================#
 provider "aws" {
-  version                 = "~> 3.0"
-  region                  = var.region
-  profile                 = var.profile
-  shared_credentials_file = "~/.aws/bb/config"
+  version = "~> 4.0"
+  region  = var.region
+  profile = var.profile
 }
 
 variable "region" {
