@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.28"></a>
+## [v0.3.28] - 2022-05-10
+
+- Upgrade AWS provider version constraint ([#31](https://github.com/binbashar/terraform-aws-ec2-basic-layout/issues/31))
+
+
 <a name="v0.3.27"></a>
 ## [v0.3.27] - 2021-10-29
 
@@ -262,7 +268,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.27...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.28...HEAD
+[v0.3.28]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.27...v0.3.28
 [v0.3.27]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.26...v0.3.27
 [v0.3.26]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.25...v0.3.26
 [v0.3.25]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.24...v0.3.25
