@@ -2,9 +2,9 @@
 # AWS Provider Settings       #
 #=============================#
 provider "aws" {
-  version                 = "~> 4.0"
-  region                  = var.region
-  profile                 = var.profile
+  version = "~> 4.0"
+  region  = var.region
+  profile = var.profile
 }
 
 variable "region" {
