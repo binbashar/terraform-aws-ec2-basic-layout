@@ -84,7 +84,7 @@ No modules.
 | <a name="input_dns_records_public_hosted_zone"></a> [dns\_records\_public\_hosted\_zone](#input\_dns\_records\_public\_hosted\_zone) | A list of DNS public (public hosted zone) records to create with the instance's IP | `list(any)` | `[]` | no |
 | <a name="input_ebs_block_device"></a> [ebs\_block\_device](#input\_ebs\_block\_device) | Additional EBS block devices to attach to the instance | `list(map(string))` | `[]` | no |
 | <a name="input_ebs_optimized"></a> [ebs\_optimized](#input\_ebs\_optimized) | Enable EBS Optimized | `string` | `"false"` | no |
-| <a name="input_enable_ssm_access"></a> [enable\_ssm\_access](#input\_enable\_ssm\_access) | If true, attaches SSM policy to instance role | `string` | `"false"` | no |
+| <a name="input_enable_ssm_access"></a> [enable\_ssm\_access](#input\_enable\_ssm\_access) | If true, attaches SSM policy to instance role | `bool` | `false` | no |
 | <a name="input_ephemeral_block_device"></a> [ephemeral\_block\_device](#input\_ephemeral\_block\_device) | Customize Ephemeral (also known as Instance Store) volumes on the instance | `list(map(string))` | `[]` | no |
 | <a name="input_instance_profile"></a> [instance\_profile](#input\_instance\_profile) | The IAM Instance Profile to launch the instance with. Specified as the name of the Instance Profile. | `string` | `""` | no |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | EC2 Instance Type | `string` | `"t3.micro"` | no |

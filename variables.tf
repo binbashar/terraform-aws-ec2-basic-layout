@@ -169,7 +169,7 @@ variable "disable_api_termination" {
 }
 
 variable "enable_ssm_access" {
-  type        = string
+  type        = bool
   description = "If true, attaches SSM policy to instance role"
-  default     = "false"
+  default     = false
 }
