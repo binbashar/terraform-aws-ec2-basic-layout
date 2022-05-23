@@ -7,6 +7,14 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.29"></a>
+## [v0.3.29] - 2022-05-23
+
+- changed var type to bool, simplified count and added terraform docs pre-commit
+- changed managed policy name
+- added SSM flag for SSM policy attachment
+
+
 <a name="v0.3.28"></a>
 ## [v0.3.28] - 2022-05-10
 
@@ -268,7 +276,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.28...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.29...HEAD
+[v0.3.29]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.28...v0.3.29
 [v0.3.28]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.27...v0.3.28
 [v0.3.27]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.26...v0.3.27
 [v0.3.26]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.25...v0.3.26
