@@ -167,3 +167,9 @@ variable "disable_api_termination" {
   description = "If true, enables EC2 Instance Termination Protection"
   default     = "false"
 }
+
+variable "enable_ssm_access" {
+  type        = bool
+  description = "If true, attaches SSM policy to instance role"
+  default     = false
+}

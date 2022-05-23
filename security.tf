@@ -112,3 +112,10 @@ data "aws_iam_policy_document" "cross_org_instance_access" {
     sid = "ec2AssumeRoleCrossAccountStatementID"
   }
 }
+
+# SSM Policy
+resource "aws_iam_role_policy_attachment" "ec2_ssm_access" {
+  count      = var.enable_ssm_access ? 1 : 0
+  role       = aws_iam_role.basic_instance_assume_role[0].name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonSSMManagedInstanceCore"
+}
