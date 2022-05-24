@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.30"></a>
+## [v0.3.30] - 2022-05-24
+
+- changed count formula and added proper managed policy
+
+
 <a name="v0.3.29"></a>
 ## [v0.3.29] - 2022-05-23
 
@@ -276,7 +282,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.29...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.30...HEAD
+[v0.3.30]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.29...v0.3.30
 [v0.3.29]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.28...v0.3.29
 [v0.3.28]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.27...v0.3.28
 [v0.3.27]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.26...v0.3.27
