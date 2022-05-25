@@ -7,6 +7,16 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.31"></a>
+## [v0.3.31] - 2022-05-25
+
+- added ref link to Examples section
+- changed module name in example
+- corrected a typo in README
+- Removed examples from main README, added new example folder for SSM and corresponding README
+- added SSM description and example in README.md file
+
+
 <a name="v0.3.30"></a>
 ## [v0.3.30] - 2022-05-24
 
@@ -282,7 +292,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.30...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.31...HEAD
+[v0.3.31]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.30...v0.3.31
 [v0.3.30]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.29...v0.3.30
 [v0.3.29]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.28...v0.3.29
 [v0.3.28]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.27...v0.3.28
