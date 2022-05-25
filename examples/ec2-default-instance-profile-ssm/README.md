@@ -21,7 +21,7 @@ For more detailed information, please refer to the following resources:
 #### ec2-default-instance-profile-ssm
 
 ```terraform
-module "terraform-aws-basic-layout" {
+module "terraform-aws-basic-layout-ssm" {
     source = "../../"
 
     prefix                      = var.prefix
