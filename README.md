@@ -124,7 +124,7 @@ No modules.
 
 ## Examples
 
-Please refer to the `Examples` section.
+Please refer to the module [**Examples**](https://github.com/binbashar/terraform-aws-ec2-basic-layout/tree/master/examples).
 ## Binbash Leverage | DevOps Automation Code Library Integration
 
 In order to get the full automated potential of the
