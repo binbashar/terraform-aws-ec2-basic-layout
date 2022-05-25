@@ -8,9 +8,11 @@ This module could be useful if you find yourself creating a layout with SSM acce
 
 You would need to set AWS credentials either via SSO or IAM and then run:
 
-```$ export AWS_SHARED_CREDENTIALS_FILE="~/.aws/credentials"
+```
+$ export AWS_SHARED_CREDENTIALS_FILE="~/.aws/credentials"
 $ export AWS_CONFIG_FILE="~/.aws/config"
-$ aws ssm start-session --target INSTANCE_ID```
+$ aws ssm start-session --target INSTANCE_ID
+```
 
 For more detailed information, please refer to the following resources:
 * [AWS CLI command reference](https://docs.aws.amazon.com/cli/latest/reference/ssm/)
