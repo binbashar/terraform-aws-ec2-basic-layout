@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.32"></a>
+## [v0.3.32] - 2022-10-08
+
+- Update README.md
+
+
 <a name="v0.3.31"></a>
 ## [v0.3.31] - 2022-05-25
 
@@ -292,7 +298,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.31...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.32...HEAD
+[v0.3.32]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.31...v0.3.32
 [v0.3.31]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.30...v0.3.31
 [v0.3.30]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.29...v0.3.30
 [v0.3.29]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.28...v0.3.29
