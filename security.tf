@@ -117,7 +117,7 @@ data "aws_iam_policy_document" "cross_org_instance_access" {
 # Attach the AmazonSSMManagedInstanceCore policy to the instance role
 # If instance_role is not provided, attach the policy to the basic_instance role
 resource "aws_iam_role_policy_attachment" "ec2_ssm_access" {
-  count = var.enable_ssm_access == "" ? 1 : 0
+  count      = var.enable_ssm_access == "" ? 1 : 0
   role       = var.instance_profile == "" ? aws_iam_role.basic_instance_assume_role[0].name : var.instance_profile
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
