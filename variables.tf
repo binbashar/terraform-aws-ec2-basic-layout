@@ -144,6 +144,12 @@ variable "security_group_rules" {
   default     = []
 }
 
+variable "security_group_ids" {
+  type        = list(string)
+  description = "A list of security group ids"
+  default     = []
+}
+
 variable "dns_records_internal_hosted_zone" {
   type        = list(any)
   description = "A list of DNS private (internal hosted zone) records to create with the instance's IP"
