@@ -92,6 +92,7 @@ No modules.
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix | `string` | `"default"` | no |
 | <a name="input_root_block_device"></a> [root\_block\_device](#input\_root\_block\_device) | Customize details about the root block device of the instance. See Block Devices below for details | `list(map(string))` | `[]` | no |
 | <a name="input_root_device_backup_tag"></a> [root\_device\_backup\_tag](#input\_root\_device\_backup\_tag) | EC2 Root Block Device backup tag | `string` | `"True"` | no |
+| <a name="input_security_group_ids"></a> [security\_group\_ids](#input\_security\_group\_ids) | A list of security group ids | `list(string)` | `[]` | no |
 | <a name="input_security_group_rules"></a> [security\_group\_rules](#input\_security\_group\_rules) | A list of security group rules | `list(any)` | `[]` | no |
 | <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Subnet ID | `string` | n/a | yes |
 | <a name="input_tag_approved_ami_value"></a> [tag\_approved\_ami\_value](#input\_tag\_approved\_ami\_value) | Set the specific tag ApprovedAMI ('true' \| 'false') that identifies aws-config compliant AMIs | `string` | `"false"` | no |
