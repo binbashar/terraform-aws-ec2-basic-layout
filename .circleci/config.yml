@@ -273,9 +273,9 @@ jobs:
 # CircleCI orbs are open-source, shareable packages of parameterizable reusable
 # configuration elements, including jobs, commands, and executors.
 #
-# orbs:
+orbs:
 #   sumologic: circleci/sumologic@1.0.6
-#   slack: circleci/slack@4.1.1
+  slack: circleci/slack@4.1.1
 
 #
 # Jobs workflow
