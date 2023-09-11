@@ -7,6 +7,18 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.34"></a>
+## [v0.3.34] - 2023-09-11
+
+- Merge branch 'feature/fix-ssm-config' of github.com:binbashar/terraform-aws-ec2-basic-layout into feature/fix-ssm-config
+- Very small change to trigger tests
+- Merge branch 'master' into feature/fix-ssm-config
+- Adjusting makefiles lib to use tf 1.0 for terratests
+- Commenting sumologic tests on CircleCI config
+- Linting fixes
+- Fix: enabling SSM access when a profile is passed
+
+
 <a name="v0.3.33"></a>
 ## [v0.3.33] - 2023-08-23
 
@@ -305,7 +317,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.33...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.34...HEAD
+[v0.3.34]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.33...v0.3.34
 [v0.3.33]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.32...v0.3.33
 [v0.3.32]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.31...v0.3.32
 [v0.3.31]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.30...v0.3.31
