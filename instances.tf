@@ -27,7 +27,7 @@ data "aws_ami" "ubuntu_linux" {
 resource "aws_instance" "main" {
   ami                         = var.ami_id != "" ? var.ami_id : data.aws_ami.ubuntu_linux.id
   instance_type               = var.instance_type
-  vpc_security_group_ids      = [aws_security_group.main.id]
+  vpc_security_group_ids      = length(var.security_group_ids) > 0 ? var.security_group_ids : [aws_security_group.main[0].id]
   subnet_id                   = var.subnet_id
   key_name                    = var.key_pair_name
   iam_instance_profile        = var.instance_profile == "" ? aws_iam_instance_profile.basic_instance[0].id : var.instance_profile

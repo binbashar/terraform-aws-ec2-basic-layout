@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.33"></a>
+## [v0.3.33] - 2023-08-23
+
+- Fix missing Slack Orb when running the release workflow ([#38](https://github.com/binbashar/terraform-aws-ec2-basic-layout/issues/38))
+- Add support for passing existing Security Group IDs ([#37](https://github.com/binbashar/terraform-aws-ec2-basic-layout/issues/37))
+
+
 <a name="v0.3.32"></a>
 ## [v0.3.32] - 2022-10-08
 
@@ -298,7 +305,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.32...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.33...HEAD
+[v0.3.33]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.32...v0.3.33
 [v0.3.32]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.31...v0.3.32
 [v0.3.31]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.30...v0.3.31
 [v0.3.30]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.29...v0.3.30

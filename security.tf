@@ -2,6 +2,7 @@
 # Security Groups
 #
 resource "aws_security_group" "main" {
+  count       = length(var.security_group_rules) > 0 ? 1 : 0
   name        = "${var.prefix}-${var.name}-instance"
   description = "${title(var.name)} Security Group Rules"
   vpc_id      = var.vpc_id
@@ -20,20 +21,21 @@ resource "aws_security_group_rule" "ingress_rules" {
   protocol          = lookup(element(var.security_group_rules, count.index), "protocol", "tcp")
   cidr_blocks       = lookup(element(var.security_group_rules, count.index), "cidr_blocks", "0.0.0.0/0")
   description       = lookup(element(var.security_group_rules, count.index), "description", "")
-  security_group_id = aws_security_group.main.id
+  security_group_id = aws_security_group.main[0].id
 }
 
 #
 # Security Groups Egress Rules
 #
 resource "aws_security_group_rule" "egress_allow_all" {
+  count             = length(var.security_group_rules) > 0 ? 1 : 0
   type              = "egress"
   from_port         = 0
   to_port           = 0
   protocol          = "-1"
   cidr_blocks       = ["0.0.0.0/0"]
   description       = "Allow Egress All"
-  security_group_id = aws_security_group.main.id
+  security_group_id = aws_security_group.main[0].id
 }
 
 #
@@ -42,14 +44,14 @@ resource "aws_security_group_rule" "egress_allow_all" {
 resource "aws_iam_instance_profile" "basic_instance" {
   count = var.instance_profile == "" ? 1 : 0
 
-  name = "basic-instance-profile-${var.prefix}-${var.name}"
+  name = "${var.prefix}-${var.name}"
   role = aws_iam_role.basic_instance_assume_role[0].name
 }
 
 resource "aws_iam_role" "basic_instance_assume_role" {
   count = var.instance_profile == "" ? 1 : 0
 
-  name               = "basic-instance-role-${var.prefix}-${var.name}"
+  name               = "${var.prefix}-${var.name}"
   path               = "/"
   assume_role_policy = data.aws_iam_policy_document.this.json
 }
