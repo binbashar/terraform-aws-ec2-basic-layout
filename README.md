@@ -129,7 +129,7 @@ In order to get the full automated potential of the
 you should initialize all the necessary helper **Makefiles**.
 
 #### How?
-You must execute the `make init-makefiles` command  at the root context
+You must execute the `make init-makefiles` command  at the root context:
 
 ```shell
 ╭─delivery at delivery-I7567 in ~/terraform/terraform-aws-backup-by-tags on master✔ 20-09-17
