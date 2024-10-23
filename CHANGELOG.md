@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.3.35"></a>
+## [v0.3.35] - 2024-10-23
+
+- Fix an issue with the condition used to attach the SSM policy to the … ([#40](https://github.com/binbashar/terraform-aws-ec2-basic-layout/issues/40))
+
+
 <a name="v0.3.34"></a>
 ## [v0.3.34] - 2023-09-11
 
@@ -317,7 +323,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.34...HEAD
+[Unreleased]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.35...HEAD
+[v0.3.35]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.34...v0.3.35
 [v0.3.34]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.33...v0.3.34
 [v0.3.33]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.32...v0.3.33
 [v0.3.32]: https://github.com/binbashar/terraform-aws-ec2-basic-layout/compare/v0.3.31...v0.3.32
