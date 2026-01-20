@@ -79,6 +79,12 @@ variable "subnet_id" {
   description = "Subnet ID"
 }
 
+variable "private_ip" {
+  type        = string
+  description = "Private IP address to associate with the instance in the VPC"
+  default     = null
+}
+
 variable "associate_public_ip_address" {
   type        = bool
   description = "Associate a public IP address with the instance"
