@@ -94,6 +94,7 @@ variable "associate_public_ip_address" {
 variable "key_pair_name" {
   type        = string
   description = "Key Pair Name"
+  default     = null
 }
 
 variable "tags" {

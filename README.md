@@ -85,7 +85,7 @@ No modules.
 | <a name="input_ephemeral_block_device"></a> [ephemeral\_block\_device](#input\_ephemeral\_block\_device) | Customize Ephemeral (also known as Instance Store) volumes on the instance | `list(map(string))` | `[]` | no |
 | <a name="input_instance_profile"></a> [instance\_profile](#input\_instance\_profile) | The IAM Instance Profile to launch the instance with. Specified as the name of the Instance Profile. | `string` | `""` | no |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | EC2 Instance Type | `string` | `"t3.micro"` | no |
-| <a name="input_key_pair_name"></a> [key\_pair\_name](#input\_key\_pair\_name) | Key Pair Name | `string` | n/a | yes |
+| <a name="input_key_pair_name"></a> [key\_pair\_name](#input\_key\_pair\_name) | Key Pair Name | `string` | `null` | no |
 | <a name="input_monitoring"></a> [monitoring](#input\_monitoring) | If true, the launched EC2 instance will have detailed monitoring enabled | `bool` | `false` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name | `string` | n/a | yes |
 | <a name="input_policy_arn"></a> [policy\_arn](#input\_policy\_arn) | Attach AWS IAM managed policies to the IAM Role. | `list(string)` | `[]` | no |
